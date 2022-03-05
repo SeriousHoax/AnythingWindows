@@ -213,6 +213,9 @@ rem MsCtfMonitor Task (keylogger) is required to be able to type within Settings
 
 schtasks /DELETE /TN "AMDLinkUpdate" /f
 schtasks /DELETE /TN "AMDRyzenMasterSDKTask" /f
+schtasks /DELETE /TN "AMDInstallLauncher" /f
+schtasks /DELETE /TN "ModifyLinkUpdate" /f
+schtasks /DELETE /TN "StartDVR" /f
 
 schtasks /Change /TN "Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /Disable
 schtasks /Change /TN "Microsoft\Windows\Application Experience\PcaPatchDbTask" /Disable
