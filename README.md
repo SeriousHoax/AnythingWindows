@@ -1,2 +1,2 @@
 # AnythingWindows
-1-Click Windows Configuration tools and other useful items
+Windows Configuration tools and other useful items
