@@ -226,6 +226,7 @@ schtasks /DELETE /TN "Microsoft\Office\Office Feature Updates" /f
 schtasks /DELETE /TN "Microsoft\Office\Office Feature Updates Logon" /f
 schtasks /DELETE /TN "Microsoft\Office\OfficeTelemetryAgentFallBack2016" /f
 schtasks /DELETE /TN "Microsoft\Office\OfficeTelemetryAgentLogOn2016" /f
+schtasks /DELETE /TN "Microsoft\Office\Office Performance Monitor" /f
 
 rem Connected User Experiences and Telemetry
 sc config DiagTrack start= disabled
