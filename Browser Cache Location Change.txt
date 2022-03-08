@@ -1,4 +1,4 @@
-Works with CMD (with admin rights) only.
+Works with CMD (Command Prompt) only.
 
 Chrome: Delete the "Cache" folder first.
 
