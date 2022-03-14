@@ -217,6 +217,9 @@ rem =================================== Windows Settings =======================
 rem ---------------------------------- Privacy & security ----------------------------------
 rem ................................ Diagnostics & feedback ................................
 
+rem - Inking And Typing Personalization
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CPSS\Store\InkingAndTypingPersonalization" /v "Value" /t REG_DWORD /d "0" /f
+
 rem 3 - Send optional diagnostic data / 1 - No
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack" /v "ShowedToastAtLevel" /t reg_DWORD /d "1" /f
 
