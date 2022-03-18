@@ -75,6 +75,7 @@ winget uninstall "windows alarms & clock"
 winget uninstall "windows camera"
 winget uninstall "windows maps"
 winget uninstall "your phone"
+winget install --id 9nblggh1zbkw --exact --source msstore --accept-package-agreements --accept-source-agreements
 
 rem https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/enable-or-disable-windows-features-using-dism
 rem DISM /Online /Get-Features /Format:Table
