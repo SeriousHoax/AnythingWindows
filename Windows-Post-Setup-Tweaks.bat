@@ -473,7 +473,6 @@ rem 1 - Disable Malicious Software Removal Tool offered via Windows Updates (MRT
 reg add "HKLM\Software\Microsoft\RemovalTools\MpGears" /v "HeartbeatTrackingIndex" /t reg_DWORD /d "0" /f
 reg add "HKLM\Software\Microsoft\RemovalTools\MpGears" /v "SpyNetReportingLocation" /t reg_MULTI_SZ /d "" /f
 reg add "HKLM\Software\Policies\Microsoft\MRT" /v "DontOfferThroughWUAU" /t reg_DWORD /d "1" /f
-reg add "HKLM\Software\Policies\Microsoft\MRT" /v "DontReportInfectionInformation" /t reg_DWORD /d "1" /f
 
 rem Choose how updates are delivered / 0 - Turns off Delivery Optimization / 1 - Gets or sends updates and apps to PCs on the same NAT only / 2 - Gets or sends updates and apps to PCs on the same local network domain / 3 - Gets or sends updates and apps to PCs on the Internet / 99 - Simple download mode with no peering / 100 - Use BITS instead of Windows Update Delivery Optimization
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\DeliveryOptimization\Config" /v "DODownloadMode" /t reg_DWORD /d "0" /f
