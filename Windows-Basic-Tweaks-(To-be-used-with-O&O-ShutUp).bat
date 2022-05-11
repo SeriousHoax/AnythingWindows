@@ -207,12 +207,6 @@ rem ................................ Diagnostics & feedback ....................
 rem - Inking And Typing Personalization
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\CPSS\Store\InkingAndTypingPersonalization" /v "Value" /t REG_DWORD /d "0" /f
 
-rem 3 - Send optional diagnostic data / 1 - No
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Diagnostics\DiagTrack" /v "ShowedToastAtLevel" /t reg_DWORD /d "1" /f
-
-rem Send optional dianostgic data / 0 - Security (Not aplicable on Home/Pro, it resets to Basic) / 1 - Basic / 2 - Enhanced (Hidden) / 3 - Full
-reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\DataCollection" /v "AllowTelemetry" /t reg_DWORD /d "0" /f
-
 rem ................................... Remote Assistance ...................................
 
 rem Remote Settings - Disable Remote Assistance
