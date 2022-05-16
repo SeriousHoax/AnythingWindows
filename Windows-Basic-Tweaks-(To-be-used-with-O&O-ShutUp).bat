@@ -41,6 +41,7 @@ winget uninstall "cortana"
 winget uninstall "get help"
 winget uninstall "microsoft people"
 winget uninstall "microsoft tips"
+winget uninstall "Feedback Hub"
 winget uninstall "windows camera"
 winget uninstall "windows maps"
 winget uninstall "Microsoft Teams"
@@ -52,7 +53,6 @@ winget uninstall "Microsoft To Do"
 winget uninstall "Movies & TV"
 winget uninstall "Quick Assist"
 winget uninstall "Clipchamp"
-winget install --id 9nblggh1zbkw --exact --source msstore --accept-package-agreements --accept-source-agreements
 
 rem https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/enable-or-disable-windows-features-using-dism
 rem DISM /Online /Get-Features /Format:Table
