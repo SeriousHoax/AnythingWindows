@@ -192,12 +192,6 @@ rem ........................................ Start .............................
 rem 1 - Show recently opened items in Start, Jump Lists, and File Explorer
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Start_TrackDocs" /t reg_DWORD /d "0" /f
 
-rem - Hide Recently Added Apps
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v "HideRecentlyAddedApps" /t REG_DWORD /d "1" /f
-
-rem - Hide Most Used Apps
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v "ShowOrHideMostUsedApps" /t REG_DWORD /d "2" /f
-
 rem =================================== Windows Settings ===================================
 rem ----------------------------------- Personalization ------------------------------------
 rem ....................................... Taskbar ........................................
