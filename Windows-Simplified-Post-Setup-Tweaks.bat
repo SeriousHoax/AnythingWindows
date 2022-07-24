@@ -149,8 +149,8 @@ reg add "HKLM\Software\Microsoft\WcmSvc\wifinetworkmanager\config" /v "AutoConne
 
 rem Setup DNS over HTTPS (DoH) Add Custom Servers
 
-netsh dns add encryption server=45.90.28.211 dohtemplate=https://dns.nextdns.io/b95fb1/Win-PC autoupgrade=yes udpfallback=no
-netsh dns add encryption server=45.90.30.211 dohtemplate=https://dns.nextdns.io/b95fb1/Win-PC autoupgrade=yes udpfallback=no
+netsh dns add encryption server=45.90.28.211 dohtemplate=https://dns.nextdns.io/b95fb1/WiN-PC autoupgrade=yes udpfallback=no
+netsh dns add encryption server=45.90.30.211 dohtemplate=https://dns.nextdns.io/b95fb1/WiN-PC autoupgrade=yes udpfallback=no
 netsh dns add encryption server=94.140.14.14 dohtemplate=https://dns.adguard.com/dns-query autoupgrade=yes udpfallback=no
 netsh dns add encryption server=94.140.15.15 dohtemplate=https://dns.adguard.com/dns-query autoupgrade=yes udpfallback=no
 
