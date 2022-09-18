@@ -182,7 +182,7 @@ reg add "HKLM\Software\Policies\Microsoft\Edge" /v "SpotlightExperiencesAndRecom
 rem Use secure DNS (DoH)
 rem reg add "HKLM\Software\Policies\Microsoft\Edge" /v "BuiltInDnsClientEnabled" /t REG_DWORD /d "1" /f
 rem reg add "HKLM\Software\Policies\Microsoft\Edge" /v "DnsOverHttpsMode" /t REG_SZ /d "secure" /f
-rem reg add "HKLM\Software\Policies\Microsoft\Edge" /v "DnsOverHttpsTemplates" /t REG_SZ /d "https://dns.nextdns.io/b95fb1" /f
+rem reg add "HKLM\Software\Policies\Microsoft\Edge" /v "DnsOverHttpsTemplates" /t REG_SZ /d "https://dns.nextdns.io/******" /f
 
 rem ------------------------------------ Microsoft Edge ------------------------------------
 rem ...................................... Profiles ........................................
