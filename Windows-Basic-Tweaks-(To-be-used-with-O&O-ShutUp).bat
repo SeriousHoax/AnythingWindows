@@ -40,6 +40,7 @@ rem winget list
 winget uninstall "cortana"
 winget uninstall "get help"
 winget uninstall "microsoft people"
+winget uninstall "Mail and Calendar"
 winget uninstall "microsoft tips"
 winget uninstall "Feedback Hub"
 winget uninstall "windows camera"
@@ -53,6 +54,7 @@ winget uninstall "Microsoft To Do"
 winget uninstall "Movies & TV"
 winget uninstall "Quick Assist"
 winget uninstall "Clipchamp"
+winget uninstall "Power Automate"
 
 rem https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/enable-or-disable-windows-features-using-dism
 rem DISM /Online /Get-Features /Format:Table
