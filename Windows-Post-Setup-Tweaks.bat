@@ -774,8 +774,8 @@ rem - Sleeping tabs timeout
 reg add "HKLM\Software\Policies\Microsoft\Edge" /v "SleepingTabsTimeout" /t REG_DWORD /d "30" /f
 
 rem - Block Sleeping Tabs for URLs
-reg add "HKLM\Software\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\1 = "https://mega.nz/"
-reg add "HKLM\Software\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\2 = "https://mega.io/"
+reg add "HKLM\Software\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls" /v "1" /t REG_SZ /d "https://mega.nz/" /f
+reg add "HKLM\Software\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls" /v "2" /t REG_SZ /d "https://mega.io/" /f
 
 rem 1 - Startup boost
 reg add "HKLM\Software\Policies\Microsoft\Edge" /v "StartupBoostEnabled" /t REG_DWORD /d "0" /f
