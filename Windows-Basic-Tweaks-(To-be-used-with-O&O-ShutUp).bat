@@ -124,6 +124,9 @@ schtasks /DELETE /TN "Microsoft\Office\Office Performance Monitor" /f
 rem Remote Desktop Services
 sc config TermService start= disabled
 
+rem Windows Remote Management (WS-Management)
+sc config WinRM start= disabled
+
 rem =================================== Windows Settings ===================================
 rem ------------------------------------ Accessibility ------------------------------------
 rem ...................................... Keyboard .......................................
