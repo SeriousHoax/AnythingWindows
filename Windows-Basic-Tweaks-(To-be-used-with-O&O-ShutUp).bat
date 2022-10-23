@@ -260,6 +260,37 @@ reg add "HKCR\Directory\shell\runas" /v "NoWorkingDirectory" /t reg_SZ /d "" /f
 reg add "HKCR\Directory\shell\runas\command" /ve /t reg_SZ /d "cmd.exe /c takeown /f \"%%1\" /r /d y && icacls \"%%1\" /grant administrators:F /t" /f
 reg add "HKCR\Directory\shell\runas\command" /v "IsolatedCommand" /t reg_SZ /d "cmd.exe /c takeown /f \"%%1\" /r /d y && icacls \"%%1\" /grant administrators:F /t" /f
 
+rem Add Right Click "Open in Windows Terminal as administrator" Context Menu
+
+reg add "HKCR\Directory\shell\OpenWTHereAsAdmin" /v "HasLUAShield" /t REG_SZ /d "" /f
+reg add "HKCR\Directory\shell\OpenWTHereAsAdmin" /v "MUIVerb" /t REG_SZ /d "Open in Windows Terminal as administrator" /f
+reg delete "HKCR\Directory\shell\OpenWTHereAsAdmin" /v "Extended" /f
+reg add "HKCR\Directory\shell\OpenWTHereAsAdmin" /v "SubCommands" /t REG_SZ /d "" /f
+reg add "HKCR\Directory\Shell\OpenWTHereAsAdmin\shell\001flyout" /v "MUIVerb" /t REG_SZ /d "Default Profile" /f
+reg add "HKCR\Directory\Shell\OpenWTHereAsAdmin\shell\001flyout" /v "HasLUAShield" /t REG_SZ /d "" /f
+reg add "HKCR\Directory\Shell\OpenWTHereAsAdmin\shell\001flyout\command" /ve /t REG_SZ /d "powershell.exe -WindowStyle Hidden \"Start-Process -Verb RunAs cmd.exe -ArgumentList @('/c','start wt.exe','-d','\"\"\"%%V\.\"\"\"')\"" /f
+reg add "HKCR\Directory\Shell\OpenWTHereAsAdmin\shell\002flyout" /v "MUIVerb" /t REG_SZ /d "Command Prompt" /f
+reg add "HKCR\Directory\Shell\OpenWTHereAsAdmin\shell\002flyout" /v "Icon" /t REG_SZ /d "imageres.dll,-5324" /f
+reg add "HKCR\Directory\Shell\OpenWTHereAsAdmin\shell\002flyout\command" /ve /t REG_SZ /d "powershell.exe -WindowStyle Hidden \"Start-Process -Verb RunAs cmd.exe -ArgumentList @('/c','start wt.exe','-p','\"\"\"Command Prompt\"\"\"','-d','\"\"\"%%V\.\"\"\"')\"" /f
+reg add "HKCR\Directory\Shell\OpenWTHereAsAdmin\shell\003flyout" /v "MUIVerb" /t REG_SZ /d "PowerShell" /f
+reg add "HKCR\Directory\Shell\OpenWTHereAsAdmin\shell\003flyout" /v "HasLUAShield" /t REG_SZ /d "" /f
+reg add "HKCR\Directory\Shell\OpenWTHereAsAdmin\shell\003flyout" /v "Icon" /t REG_SZ /d "powershell.exe" /f
+reg add "HKCR\Directory\Shell\OpenWTHereAsAdmin\shell\003flyout\command" /ve /t REG_SZ /d "powershell.exe -WindowStyle Hidden \"Start-Process -Verb RunAs cmd.exe -ArgumentList @('/c','start wt.exe','-p','\"\"\"Windows PowerShell\"\"\"','-d','\"\"\"%%1\.\"\"\"')\"" /f
+reg add "HKCR\Directory\Background\shell\OpenWTHereAsAdmin" /v "HasLUAShield" /t REG_SZ /d "" /f
+reg add "HKCR\Directory\Background\shell\OpenWTHereAsAdmin" /v "MUIVerb" /t REG_SZ /d "Open in Windows Terminal as administrator" /f
+reg delete "HKCR\Directory\Background\shell\OpenWTHereAsAdmin" /v "Extended" /f
+reg add "HKCR\Directory\Background\shell\OpenWTHereAsAdmin" /v "SubCommands" /t REG_SZ /d "" /f
+reg add "HKCR\Directory\Background\Shell\OpenWTHereAsAdmin\shell\001flyout" /v "MUIVerb" /t REG_SZ /d "Default Profile" /f
+reg add "HKCR\Directory\Background\Shell\OpenWTHereAsAdmin\shell\001flyout" /v "HasLUAShield" /t REG_SZ /d "" /f
+reg add "HKCR\Directory\Background\Shell\OpenWTHereAsAdmin\shell\001flyout\command" /ve /t REG_SZ /d "powershell.exe -WindowStyle Hidden \"Start-Process -Verb RunAs cmd.exe -ArgumentList @('/c','start wt.exe','-d','\"\"\"%%V\.\"\"\"')\"" /f
+reg add "HKCR\Directory\Background\Shell\OpenWTHereAsAdmin\shell\002flyout" /v "MUIVerb" /t REG_SZ /d "Command Prompt" /f
+reg add "HKCR\Directory\Background\Shell\OpenWTHereAsAdmin\shell\002flyout" /v "Icon" /t REG_SZ /d "imageres.dll,-5324" /f
+reg add "HKCR\Directory\Background\Shell\OpenWTHereAsAdmin\shell\002flyout\command" /ve /t REG_SZ /d "powershell.exe -WindowStyle Hidden \"Start-Process -Verb RunAs cmd.exe -ArgumentList @('/c','start wt.exe','-p','\"\"\"Command Prompt\"\"\"','-d','\"\"\"%%V\.\"\"\"')\"" /f
+reg add "HKCR\Directory\Background\Shell\OpenWTHereAsAdmin\shell\003flyout" /v "MUIVerb" /t REG_SZ /d "PowerShell" /f
+reg add "HKCR\Directory\Background\Shell\OpenWTHereAsAdmin\shell\003flyout" /v "HasLUAShield" /t REG_SZ /d "" /f
+reg add "HKCR\Directory\Background\Shell\OpenWTHereAsAdmin\shell\003flyout" /v "Icon" /t REG_SZ /d "powershell.exe" /f
+reg add "HKCR\Directory\Background\Shell\OpenWTHereAsAdmin\shell\003flyout\command" /ve /t REG_SZ /d "powershell.exe -WindowStyle Hidden \"Start-Process -Verb RunAs cmd.exe -ArgumentList @('/c','start wt.exe','-p','\"\"\"Windows PowerShell\"\"\"','-d','\"\"\"%%V\.\"\"\"')\"" /f
+
 rem Show Detailed Information During Startup, Shutdown, Login, and Logout / Enable Verbose or Highly Detailed Status Messages
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v "VerboseStatus" /t REG_DWORD /d "1" /f
 
