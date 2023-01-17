@@ -22,6 +22,7 @@ user_pref("browser.toolbars.bookmarks.visibility", "always");
 user_pref("browser.uidensity", 1);
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("extensions.pocket.enabled", false);
+user_pref("extensions.unifiedExtensions.enabled", false);
 user_pref("extensions.webextensions.restrictedDomains", "");
 user_pref("layout.css.prefers-color-scheme.content-override", 0);
 user_pref("layout.spellcheckDefault", 2);
