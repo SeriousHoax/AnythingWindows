@@ -240,9 +240,6 @@ reg add "HKLM\Software\Policies\Microsoft\Windows\WDI\{9c5a40da-b965-4fc3-8781-8
 
 rem =============================== Windows Scheduled Tasks ================================
 
-rem UAC Bypass - https://enigma0x3.net/2016/07/22/bypassing-uac-on-windows-10-using-disk-cleanup
-rem MsCtfMonitor Task (keylogger) is required to be able to type within Settings and etc
-
 schtasks /DELETE /TN "AMDLinkUpdate" /f
 schtasks /DELETE /TN "AMDRyzenMasterSDKTask" /f
 schtasks /DELETE /TN "AMDInstallLauncher" /f
