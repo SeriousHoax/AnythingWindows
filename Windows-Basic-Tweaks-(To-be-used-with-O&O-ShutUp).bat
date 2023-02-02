@@ -36,6 +36,11 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\ReserveManager" /v "Misc
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\ReserveManager" /v "PassedPolicy" /t reg_DWORD /d "0" /f
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\ReserveManager" /v "ShippedWithReserves" /t reg_DWORD /d "0" /f
 
+rem Remove unnecessary files/folders
+
+rd "C:\Users\AniK\Favorites" /s /q
+rd "C:\Users\AniK\Links" /s /q
+
 rem winget list
 winget uninstall "cortana"
 winget uninstall "get help"
