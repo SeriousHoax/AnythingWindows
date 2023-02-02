@@ -66,6 +66,11 @@ reg add "HKLM\Software\Policies\Microsoft\MRT" /v "DontOfferThroughWUAU" /t reg_
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\Subscriptions" /f
 reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\SuggestedApps" /f
 
+rem Remove unnecessary files/folders
+
+rd "C:\Users\AniK\Favorites" /s /q
+rd "C:\Users\AniK\Links" /s /q
+
 rem winget list
 winget uninstall "cortana"
 winget uninstall "get help"
