@@ -1,0 +1,7 @@
+Add it on shortcut target
+
+--disable-direct-composition-video-overlays
+
+Tasbar Shortcut Location
+
+C:\Users\*UserName*\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar
