@@ -1,2 +1,4 @@
 https://www.kaspersky.co.uk/downloads/free-antivirus
+https://www.kaspersky.co.uk/downloads/basic
 https://www.kaspersky.co.uk/downloads/standard
+https://www.kaspersky.co.uk/downloads/plus
