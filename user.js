@@ -27,6 +27,7 @@ user_pref("layout.css.prefers-color-scheme.content-override", 0);
 user_pref("layout.spellcheckDefault", 2);
 user_pref("media.autoplay.default", 5);
 user_pref("middlemouse.scrollbarPosition", true);
+user_pref("network.dns.echconfig.enabled", true);
 user_pref("network.IDN_show_punycode", true);
 user_pref("signon.rememberSignons", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
