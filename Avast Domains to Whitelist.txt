@@ -1,4 +1,4 @@
-These domains have to be whitelisted to properly use Avast Antivirus Free or Paid.
+These domains have to be whitelisted to properly use Avast Free or Paid if you're using an adblocking DNS.
 
 Adguard Home format:
 
