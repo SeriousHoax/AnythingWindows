@@ -29,5 +29,6 @@ user_pref("media.autoplay.default", 5);
 user_pref("middlemouse.scrollbarPosition", true);
 user_pref("network.dns.echconfig.enabled", true);
 user_pref("network.IDN_show_punycode", true);
+user_pref("network.trr.mode", 3);
 user_pref("signon.rememberSignons", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
