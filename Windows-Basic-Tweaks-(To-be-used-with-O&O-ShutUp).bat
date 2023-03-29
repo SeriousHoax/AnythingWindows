@@ -107,7 +107,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting" /v "LoggingDis
 schtasks /Change /TN "Microsoft\Windows\ErrorDetails\EnableErrorDetailsUpdate" /Disable
 schtasks /Change /TN "Microsoft\Windows\Windows Error Reporting\QueueReporting" /Disable
 
-rem Windows Error Reporting Service
+rem Disable Windows Error Reporting Service
 sc config WerSvc start= disabled
 
 rem =================================== Windows Explorer ===================================
