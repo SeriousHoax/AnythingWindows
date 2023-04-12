@@ -1,6 +1,7 @@
 user_pref("accessibility.force_disabled", 1);
 user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("browser.compactmode.show", true);
+user_pref("browser.contentblocking.category", "custom");
 user_pref("browser.download.dir", "E:\\Downloads\\Browser Downloads");
 user_pref("browser.download.folderList", 2);
 user_pref("browser.tabs.firefox-view", false);
@@ -29,5 +30,7 @@ user_pref("media.autoplay.default", 5);
 user_pref("middlemouse.scrollbarPosition", true);
 user_pref("network.dns.echconfig.enabled", true);
 user_pref("network.IDN_show_punycode", true);
+user_pref("privacy.query_stripping.enabled", true);
+user_pref("privacy.query_stripping.enabled.pbmode", true);
 user_pref("signon.rememberSignons", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
