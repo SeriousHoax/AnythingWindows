@@ -1,3 +1,9 @@
+/******
+*    Name: SeriousHoax user.js for Firefox
+*    Date: 13 April 2023
+* Version: 9
+*     url: https://github.com/SeriousHoax/AnythingWindows/blob/main/user.js
+
 user_pref("accessibility.force_disabled", 1);
 user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("browser.compactmode.show", true);
