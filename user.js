@@ -1,7 +1,7 @@
 /*
-*    Name: SeriousHoax user.js for Firefox
+*    Name: SeriousHoax's user.js for Firefox
 *    Date: 13 April 2023
-* Version: 11
+* Version: 12
 *     URL: https://github.com/SeriousHoax/AnythingWindows/blob/main/user.js
 */
 
