@@ -1,14 +1,14 @@
 /*
 *    Name: SeriousHoax user.js for Firefox
 *    Date: 13 April 2023
-* Version: 10
-*     url: https://github.com/SeriousHoax/AnythingWindows/blob/main/user.js
+* Version: 11
+*     URL: https://github.com/SeriousHoax/AnythingWindows/blob/main/user.js
 */
 
 user_pref("accessibility.force_disabled", 1);
 user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("browser.compactmode.show", true);
-user_pref("browser.contentblocking.category", "custom");
+user_pref("browser.contentblocking.category", "strict");
 user_pref("browser.download.dir", "E:\\Downloads\\Browser Downloads");
 user_pref("browser.download.folderList", 2);
 user_pref("browser.tabs.firefox-view", false);
