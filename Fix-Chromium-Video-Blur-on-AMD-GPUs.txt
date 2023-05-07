@@ -1,7 +1,9 @@
 Add it on shortcut target
 
---disable-direct-composition-video-overlays
+--disable_direct_composition_video_overlays=1
 
 Tasbar Shortcut Location
 
 C:\Users\*UserName*\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar
+
+*Previously it was "--disable-direct-composition-video-overlays" but it was changed to the above value in Chrome 113.
