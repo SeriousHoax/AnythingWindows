@@ -11,6 +11,8 @@ Adguard Home format:
 @@||ncc.avast.com^$important
 @@||shepherd.ff.avast.com^$important
 @@||streamback.ff.avast.com^$important
+@@||streamback.ns1.ff.avast.com^important
+@@||submit.sb.avast.com^$important
 @@||t.av.st^$important
 @@||v7.stats.avast.com^$important
 @@||v7event.stats.avast.com^$important
@@ -27,6 +29,8 @@ ipmcdn.avast.com
 ncc.avast.com
 shepherd.ff.avast.com
 streamback.ff.avast.com
+streamback.ns1.ff.avast.com
+submit.sb.avast.com
 t.av.st
 v7.stats.avast.com
 v7event.stats.avast.com
