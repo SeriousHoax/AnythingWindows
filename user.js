@@ -1,14 +1,14 @@
 /*
 *    Name: SeriousHoax's user.js for Firefox
-*    Date: 14 April 2023
-* Version: 13
+*    Date: 21 June 2023
+* Version: 14
 *     URL: https://github.com/SeriousHoax/AnythingWindows/blob/main/user.js
 */
 
 user_pref("accessibility.force_disabled", 1);
 user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("browser.compactmode.show", true);
-user_pref("browser.contentblocking.category", "strict");
+user_pref("browser.contentblocking.category", "custom");
 user_pref("browser.download.dir", "E:\\Downloads\\Browser Downloads");
 user_pref("browser.download.folderList", 2);
 user_pref("browser.tabs.firefox-view", false);
@@ -43,9 +43,9 @@ user_pref("network.IDN_show_punycode", true);
 user_pref("privacy.partition.network_state.ocsp_cache", true);
 user_pref("privacy.query_stripping.enabled", true);
 user_pref("privacy.query_stripping.enabled.pbmode", true);
-user_pref("privacy.trackingprotection.enabled", true);
-user_pref("privacy.trackingprotection.socialtracking.enabled", true);
 user_pref("privacy.trackingprotection.cryptomining.enabled", true);
+user_pref("privacy.trackingprotection.emailtracking.enabled", true);
 user_pref("privacy.trackingprotection.fingerprinting.enabled", true);
+user_pref("privacy.trackingprotection.pbmode.enabled", false);
 user_pref("signon.rememberSignons", false);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
