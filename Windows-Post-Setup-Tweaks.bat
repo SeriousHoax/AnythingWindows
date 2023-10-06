@@ -306,6 +306,8 @@ netsh dns add encryption server=**.**.**.*** dohtemplate=https://dns.nextdns.io/
 netsh dns add encryption server=**.**.**.*** dohtemplate=https://dns.nextdns.io/******/***-PC autoupgrade=yes udpfallback=no
 netsh dns add encryption server=94.140.14.14 dohtemplate=https://dns.adguard.com/dns-query autoupgrade=yes udpfallback=no
 netsh dns add encryption server=94.140.15.15 dohtemplate=https://dns.adguard.com/dns-query autoupgrade=yes udpfallback=no
+netsh dns add encryption server=76.76.2.42 dohtemplate=https://freedns.controld.com/x-hagezi-proplus autoupgrade=yes udpfallback=no
+netsh dns add encryption server=76.76.10.42 dohtemplate=https://freedns.controld.com/x-hagezi-proplus autoupgrade=yes udpfallback=no
 
 rem =================================== Windows Settings ===================================
 rem ----------------------------------- Personalization ------------------------------------
