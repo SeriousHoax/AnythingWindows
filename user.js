@@ -1,7 +1,7 @@
 /*
 *    Name: SeriousHoax's user.js for Firefox
-*    Date: 30 December 2023
-* Version: 17
+*    Date: 7 January 2024
+* Version: 18
 *     URL: https://github.com/SeriousHoax/AnythingWindows/blob/main/user.js
 */
 
@@ -30,6 +30,7 @@ user_pref("browser.tabs.closeWindowWithLastTab", false);
 user_pref("browser.tabs.loadBookmarksInBackground", true);
 user_pref("browser.toolbars.bookmarks.visibility", "always");
 user_pref("browser.uidensity", 1);
+user_pref("browser.urlbar.autoFill.adaptiveHistory.enabled", true);
 user_pref("browser.urlbar.showSearchTerms.enabled", false);
 user_pref("cookiebanners.service.mode", 2);
 user_pref("cookiebanners.service.mode.privateBrowsing", 2);
