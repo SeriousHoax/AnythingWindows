@@ -1,4 +1,4 @@
-rem Copy the file into the "Other" folder first. eg: "E:\ThunderbirdPortable\Other"
+rem Copy the file into the "Other" folder first. eg: "E:\Thunderbird Portable\Other"
 
 set "CURRENT-PATH=%CD%" & cd..
 set "PROGRAM-PATH=%CD%" & cd %CURRENT-PATH%
