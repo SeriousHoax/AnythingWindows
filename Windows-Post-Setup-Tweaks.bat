@@ -172,6 +172,10 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "S
 rem 1 - Always show more details in copy dialog
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" /v "EnthusiastMode" /t reg_DWORD /d "1" /f
 
+rem Disable 260 character limit for file path
+
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
+
 rem =================================== Windows Policies ===================================
 
 rem Disable Active Desktop
