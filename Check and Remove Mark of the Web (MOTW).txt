@@ -1,0 +1,11 @@
+Check: Get-Content -Path "C:\path\to\your\file.ext" -Stream Zone.Identifier
+
+Remove:
+
+For all files in the folder:
+
+dir | Unblock-File
+
+For all files in the parent folder and all subfolders:
+
+dir -Recurse | Unblock-File
