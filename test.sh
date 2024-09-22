@@ -1,18 +1,26 @@
-# bash script
+# https://github.com/systemd/zram-generator
 
-# Define variables
-DOWNLOAD_URL="https://raw.githubusercontent.com/SeriousHoax/AnythingWindows/refs/heads/main/test.sh"
-SCRIPT_NAME="test.sh"
-TARGET_DIR="/home"
+# Install zram-generator
+sudo zypper --non-interactive in zram-generator
 
-# Download the script from the specified URL
-echo "Downloading script from $DOWNLOAD_URL..."
-curl -o /tmp/$SCRIPT_NAME $DOWNLOAD_URL
+# Create configuration file for zram
+echo '[zram0]
+zram-size = ram
+compression-algorithm = zstd' | sudo tee /etc/systemd/zram-generator.conf
 
-# Make the script executable
-echo "Making script executable..."
-sudo chmod +x $TARGET_DIR/$SCRIPT_NAME
+# Create sysctl configuration for zram
+echo 'vm.swappiness = 180
+vm.watermark_boost_factor = 0
+vm.watermark_scale_factor = 125
+vm.page-cluster = 0' | sudo tee /etc/sysctl.d/99-vm-zram-parameters.conf
 
-# Run the script
-echo "Running the script..."
-sudo $TARGET_DIR/$SCRIPT_NAME
+# Reload systemd daemon and start zram
+sudo systemctl daemon-reload
+
+# Start the correct zram service
+sudo systemctl start systemd-zram-setup@zram0.service
+
+# Check if the zram device is working
+echo "check with"
+echo "swapon or zramctl"
+echo "or systemctl status systemd-zram-setup@zram0.service"
