@@ -26,3 +26,4 @@ sudo systemctl start systemd-zram-setup@zram0.service
 echo "check with"
 echo "swapon or zramctl"
 echo "or systemctl status systemd-zram-setup@zram0.service"
+
