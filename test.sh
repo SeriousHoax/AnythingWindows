@@ -1,5 +1,5 @@
 #!/bin/sh
-
+#set -e
 # https://github.com/systemd/zram-generator
 
 # Install zram-generator
