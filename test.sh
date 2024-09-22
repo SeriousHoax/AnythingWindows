@@ -1,7 +1,7 @@
 # bash script
 
 # Define variables
-DOWNLOAD_URL="https://example.com/test.sh"
+DOWNLOAD_URL="https://raw.githubusercontent.com/SeriousHoax/AnythingWindows/refs/heads/main/test.sh"
 SCRIPT_NAME="test.sh"
 TARGET_DIR="/home"
 
