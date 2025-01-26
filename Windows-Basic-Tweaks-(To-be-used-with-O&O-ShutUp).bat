@@ -227,6 +227,16 @@ netsh dns add encryption server=94.140.15.15 dohtemplate=https://dns.adguard.com
 netsh dns add encryption server=76.76.2.42 dohtemplate=https://freedns.controld.com/x-hagezi-proplus autoupgrade=yes udpfallback=no
 netsh dns add encryption server=76.76.10.42 dohtemplate=https://freedns.controld.com/x-hagezi-proplus autoupgrade=yes udpfallback=no
 
+rem Disable IPv6
+netsh int ipv6 isatap set state disabled
+netsh int teredo set state disabled
+netsh interface ipv6 6to4 set state state=disabled undoonstop=disabled
+reg add "HKLM\Software\Policies\Microsoft\Windows\TCPIP\v6Transition" /v "6to4_State" /t REG_SZ /d "Disabled" /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\TCPIP\v6Transition" /v "ISATAP_State" /t REG_SZ /d "Disabled" /f
+reg add "HKLM\Software\Policies\Microsoft\Windows\TCPIP\v6Transition" /v "Teredo_State" /t REG_SZ /d "Disabled" /f
+reg add "HKLM\System\CurrentControlSet\Services\Tcpip6\Parameters" /v "DisabledComponents" /t REG_DWORD /d "255" /f
+reg add "HKLM\System\CurrentControlSet\Services\Tcpip6\Parameters" /v "EnableICSIPv6" /t REG_DWORD /d "255" /f
+
 rem =================================== Windows Settings ===================================
 rem ----------------------------------- Personalization ------------------------------------
 rem ..................................... Background .......................................
