@@ -1,30 +1,23 @@
 rem                       1    2    3    4                     *Here We Go*                              
 
-
 rem Requesting Administrator privilege for this batch script
 
 :: BatchGotAdmin
 :-------------------------------------
 REM  --> Check for permissions
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+>nul 2>&1 fsutil dirty query %systemdrive%
 
 REM --> If error flag set, we do not have admin.
-if '%errorlevel%' NEQ '0' (
+if %errorlevel% NEQ 0 (
     echo Requesting administrative privileges...
     goto UACPrompt
 ) else ( goto gotAdmin )
 
 :UACPrompt
-    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
-    echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\getadmin.vbs"
-
-    "%temp%\getadmin.vbs"
+    powershell -Command "Start-Process '%~s0' -Verb RunAs"
     exit /B
 
 :gotAdmin
-    if exist "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" )
-    pushd "%CD%"
-    CD /D "%~dp0"
 :--------------------------------------
 
 rem Disable Hibernate
@@ -111,8 +104,6 @@ rem Disable Windows Error Reporting Service
 sc config WerSvc start= disabled
 
 rem =================================== Windows Explorer ===================================
-rem --------------------------------------- Options ----------------------------------------
-rem ....................................... General ........................................
 
 rem 2 - Open File Explorer to Quick access / 1 - Open File Explorer to This PC / 3 - Open File Explorer to Downloads
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "LaunchTo" /t reg_DWORD /d "1" /f
@@ -123,10 +114,6 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "ShowRecent
 rem 1 - Show frequently folders in Quick Access
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "ShowFrequent" /t reg_DWORD /d "0" /f
 
-rem =================================== Windows Explorer ===================================
-rem --------------------------------------- Options ----------------------------------------
-rem .................................. Advanced Settings ...................................
-
 rem 1 - Show hidden files, folders and drives
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Hidden" /t reg_DWORD /d "1" /f
 
@@ -135,6 +122,14 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "H
 
 rem 0 - Hide protected operating system files 
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowSuperHidden" /t reg_DWORD /d "0" /f
+
+rem Remove Home (Quick access) from This PC
+reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "HubMode" /t REG_DWORD /d "1" /f
+reg delete "HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{f874310e-b6b7-47dc-bc84-b9e6b38f5903}" /f
+reg delete "HKLM\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{f874310e-b6b7-47dc-bc84-b9e6b38f5903}" /f
+
+rem Remove Gallery from Navigation Pane in File Explorer
+reg add "HKCU\Software\Classes\CLSID\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}" /v "System.IsPinnedToNameSpaceTree" /t REG_DWORD /d "0" /f
 
 rem 1 - Always show more details in copy dialog
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" /v "EnthusiastMode" /t reg_DWORD /d "1" /f
@@ -161,10 +156,6 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "N
 
 rem 1 - Do not add shares from recently opened documents to the My Network Places folder
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoRecentDocsNetHood" /t REG_DWORD /d "1" /f
-
-rem Restricting PowerShell to Constrained Language mode
-
-reg add "HKLM\System\CurrentControlSet\Control\Session Manager\Environment" /v "__PSLockDownPolicy" /t reg_SZ /d "4" /f
 
 rem Disable SMB 1.0/2.0
 reg add "HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters" /v "SMB1" /t reg_DWORD /d "0" /f
@@ -220,8 +211,8 @@ reg add "HKLM\Software\Microsoft\WcmSvc\wifinetworkmanager\config" /v "AutoConne
 
 rem Setup DNS over HTTPS (DoH) Add Custom Servers
 
-netsh dns add encryption server=**.**.**.*** dohtemplate=https://dns.nextdns.io/******/***-PC autoupgrade=yes udpfallback=no
-netsh dns add encryption server=**.**.**.*** dohtemplate=https://dns.nextdns.io/******/***-PC autoupgrade=yes udpfallback=no
+rem netsh dns add encryption server=**.**.**.*** dohtemplate=https://dns.nextdns.io/******/***-PC autoupgrade=yes udpfallback=no
+rem netsh dns add encryption server=**.**.**.*** dohtemplate=https://dns.nextdns.io/******/***-PC autoupgrade=yes udpfallback=no
 netsh dns add encryption server=94.140.14.14 dohtemplate=https://dns.adguard.com/dns-query autoupgrade=yes udpfallback=no
 netsh dns add encryption server=94.140.15.15 dohtemplate=https://dns.adguard.com/dns-query autoupgrade=yes udpfallback=no
 netsh dns add encryption server=76.76.2.42 dohtemplate=https://freedns.controld.com/x-hagezi-proplus autoupgrade=yes udpfallback=no
