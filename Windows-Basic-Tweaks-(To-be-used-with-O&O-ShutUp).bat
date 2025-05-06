@@ -170,6 +170,10 @@ schtasks /DELETE /TN "ModifyLinkUpdate" /f
 schtasks /DELETE /TN "StartDVR" /f
 
 schtasks /Change /TN "Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /Disable
+schtasks /Change /TN "Microsoft\Windows\Application Experience\PcaPatchDbTask" /Disable
+schtasks /Change /TN "Microsoft\Windows\Application Experience\ProgramDataUpdater" /Disable
+schtasks /Change /TN "Microsoft\Windows\Customer Experience Improvement Program\Consolidator" /Disable
+schtasks /Change /TN "Microsoft\Windows\Customer Experience Improvement Program\UsbCeip" /Disable
 
 schtasks /DELETE /TN "Microsoft\Office\Office Automatic Updates 2.0" /f
 schtasks /DELETE /TN "Microsoft\Office\Office ClickToRun Service Monitor" /f
@@ -178,6 +182,14 @@ schtasks /DELETE /TN "Microsoft\Office\Office Feature Updates Logon" /f
 schtasks /DELETE /TN "Microsoft\Office\OfficeTelemetryAgentFallBack2016" /f
 schtasks /DELETE /TN "Microsoft\Office\OfficeTelemetryAgentLogOn2016" /f
 schtasks /DELETE /TN "Microsoft\Office\Office Performance Monitor" /f
+
+rem =============================== Windows Services ========================
+
+rem Connected User Experiences and Telemetry
+sc config DiagTrack start= disabled
+
+rem Geolocation Service
+sc config lfsvc start= disabled
 
 rem Remote Desktop Services
 sc config TermService start= disabled
@@ -398,19 +410,16 @@ reg add "HKCU\Control Panel\Cursors" /v "Person" /t reg_EXPAND_SZ /d "%%SystemRo
 
 rem Windows Firewall Block
 
-netsh advfirewall firewall add rule name="AdGuardHome" dir=in action=allow program="C:\Program Files\AdGuardHome\AdGuardHome.exe" enable=yes
 netsh advfirewall firewall add rule name="CCleaner" dir=out action=block program="E:\Portables\Ccleaner Portable\CCleaner64.exe" enable=yes
 netsh advfirewall firewall add rule name="Google Chrome TestingBox" dir=in action=block program="E:\Portables\Chrome Portable TestingBox\Chrome\Chrome.exe" enable=yes 
 netsh advfirewall firewall add rule name="Google Chrome Report" dir=in action=block program="E:\Portables\Chrome Portable Report\Chrome\Chrome.exe" enable=yes
 netsh advfirewall firewall add rule name="Microsoft Compatibility Telemetry" dir=out action=block program="C:\Windows\System32\CompatTelRunner.exe" enable=yes
-netsh advfirewall firewall add rule name="deluge" dir=in action=block program="C:\Program Files\Deluge\deluge.exe" enable=yes
 netsh advfirewall firewall add rule name="EagleGet Free Downloader" dir=in action=block program="E:\Portables\EagleGet Protable\EagleGet.exe" enable=yes
 netsh advfirewall firewall add rule name="filec" dir=in action=block program="E:\Portables\File Centipede\filec.exe" enable=yes
 netsh advfirewall firewall add rule name="fileu" dir=in action=block program="E:\Portables\File Centipede\fileu.exe" enable=yes
 netsh advfirewall firewall add rule name="Firefox" dir=in action=block program="C:\Program Files\Mozilla Firefox\firefox.exe" enable=yes
 netsh advfirewall firewall add rule name="LocalSend" dir=in action=block program="E:\Portables\LocalSend\localsend_app.exe" enable=yes
 netsh advfirewall firewall add rule name="Microsoft Edge" dir=in action=block program="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" enable=yes description
-netsh advfirewall firewall add rule name="qBittorrent Portable" dir=in action=block program="E:\Portables\qBittorrent Portable\qbittorrent.exe" enable=yes
 netsh advfirewall firewall add rule name="Tixati Portable" dir=in action=block program="E:\Portables\Tixati Portable\tixati_Windows64bit.exe" enable=yes
 netsh advfirewall firewall add rule name="WOMicClient" dir=in action=block program="C:\Program Files (x86)\WOMic\WOMicClient.exe" enable=yes
 
