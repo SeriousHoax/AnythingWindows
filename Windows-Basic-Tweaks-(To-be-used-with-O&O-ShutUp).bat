@@ -411,6 +411,7 @@ reg add "HKCU\Control Panel\Cursors" /v "Person" /t reg_EXPAND_SZ /d "%%SystemRo
 rem Windows Firewall Block
 
 netsh advfirewall firewall add rule name="CCleaner" dir=out action=block program="E:\Portables\Ccleaner Portable\CCleaner64.exe" enable=yes
+netsh advfirewall firewall add rule name="CCleaner" dir=out action=block program="E:\Portables\Ccleaner Portable\x64\CCleanerBugReport.exe" enable=yes
 netsh advfirewall firewall add rule name="Google Chrome TestingBox" dir=in action=block program="E:\Portables\Chrome Portable TestingBox\Chrome\Chrome.exe" enable=yes 
 netsh advfirewall firewall add rule name="Google Chrome Report" dir=in action=block program="E:\Portables\Chrome Portable Report\Chrome\Chrome.exe" enable=yes
 netsh advfirewall firewall add rule name="Microsoft Compatibility Telemetry" dir=out action=block program="C:\Windows\System32\CompatTelRunner.exe" enable=yes
