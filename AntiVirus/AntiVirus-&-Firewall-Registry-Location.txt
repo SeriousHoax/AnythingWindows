@@ -1,0 +1,2 @@
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Security Center\Provider\Av
+Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Security Center\Provider\Fw\
