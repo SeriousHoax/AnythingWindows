@@ -1,0 +1,470 @@
+REGEDIT4
+
+[-HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64]
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\AtscAntenaList]
+"0"=""
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\AtscCableList]
+"0"=""
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\AudioFolderList]
+"0"=".\\Sound"
+"1"=".\\Rus Sound"
+"2"=".\\Eng Sound"
+"3"=".\\Sound Rus"
+"4"=".\\Sound Eng"
+"5"=".\\Rus_Sound"
+"6"=".\\Eng_Sound"
+"7"=".\\Sound_Rus"
+"8"=".\\Sound_Eng"
+"9"=".\\Rus.Sound"
+"10"=".\\Eng.Sound"
+"11"=".\\Sound.Rus"
+"12"=".\\Sound.Eng"
+"13"=""
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\CaptionFolderList]
+"0"=".\\Sub"
+"1"=".\\Sub Rus"
+"2"=".\\Sub Eng"
+"3"=".\\Rus Sub"
+"4"=".\\Eng Sub"
+"5"=".\\Sub_Rus"
+"6"=".\\Sub_Eng"
+"7"=".\\Rus_Sub"
+"8"=".\\Eng_Sub"
+"9"=".\\Subs"
+"10"=".\\Subs Rus"
+"11"=".\\Subs Eng"
+"12"=".\\Rus Subs"
+"13"=".\\Eng Subs"
+"14"=".\\Subs_Rus"
+"15"=".\\Subs_Eng"
+"16"=".\\Rus_Subs"
+"17"=".\\Eng_Subs"
+"18"=".\\Subtitles"
+"19"=".\\Subtitles Rus"
+"20"=".\\Subtitles Eng"
+"21"=".\\Rus Subtitles"
+"22"=".\\Eng Subtitles"
+"23"=".\\Subtitles_Rus"
+"24"=".\\Subtitles_Eng"
+"25"=".\\Rus_Subtitles"
+"26"=".\\Eng_Subtitles"
+"27"=".\\Субтитры"
+"28"=".\\Субтитры Rus"
+"29"=".\\Субтитры Eng"
+"30"=".\\Rus Субтитры"
+"31"=".\\Eng Субтитры"
+"32"=".\\Субтитры_Rus"
+"33"=".\\Субтитры_Eng"
+"34"=".\\Rus_Субтитры"
+"35"=".\\Eng_Субтитры"
+"36"=""
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\CaptionWordSearchList]
+"0"="Переводчик Google=https://translate.google.ru/#auto/ru/%%SS"
+"1"="Переводчик Yandex=https://translate.yandex.ru/?lang=en-ru&text=%%SS"
+"2"="Словарь PROMT.One=https://www.translate.ru/dictionary/en-ru/%%SS"
+"3"="Словарь ABBYY Lingvo Live=https://www.lingvolive.com/ru-ru/translate/en-ru/%%SS"
+"4"=""
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\Dialog324]
+"WindowPosition"="308,77,1059,641"
+"TopMost"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\Dialog462]
+"ColumnWidth"="100,120,250,90,50,270,"
+"WindowPosition"="710,145,1338,574"
+"TopMost"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\DvbcList]
+"0"=""
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\DvbsList]
+"0"=""
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\DvbtList]
+"0"=""
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\ExtensionInfoList]
+"0"="SubtitleTranslate - Google.as"
+"0DN"=dword:ffffffff
+"0UP"=dword:00000000
+"0U"=""
+"0P"=""
+"0S"=""
+"0D"="ru"
+"1"=""
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\FileFormat]
+"Video"="avi wmv wmp wm asf mpg mpeg mpe m1v m2v mpv2 mp2v ts tp tpr trp vob ifo ogm ogv mp4 m4v m4p m4b 3gp 3gpp 3g2 3gp2 mkv rm ram rmvb rpm flv swf mov qt amr nsv dpg m2ts m2t mts dvr-ms k3g skm evo nsr amv divx webm wtv f4v mxf bik iso"
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\FileIconList]
+"0"=".3G2*3G2 - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*41"
+"1"=".3GP*3GP - phone Video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*28"
+"2"=".3GP2*3GP2 - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*42"
+"3"=".3GPP*3GPP - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*40"
+"4"=".AAC*AAC - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*63"
+"5"=".AC3*AC3 - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*62"
+"6"=".AIF*AIF - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"7"=".AIFF*AIFF - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"8"=".AMR*AMR - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*46"
+"9"=".AMV*AMV - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"10"=".APE*APE - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*64"
+"11"=".ASF*ASF - Windows Media files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*3"
+"12"=".ASS*ASS - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*73"
+"13"=".ASX*ASX - Windows Media files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*4"
+"14"=".AVI*AVI - Windows default video file*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*1"
+"15"=".BIK*BIK - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"16"=".CDA*CDA - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"17"=".CUE*CUE - Playlist File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"18"=".DIVX*DIVX - video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*2"
+"19"=".DMSKM*DMSKM - mobile phone video file*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*31"
+"20"=".DPG*DPG - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"21"=".DPL*DPL - Playlist File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"22"=".DSF*DSF - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"23"=".DTS*DTS - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*67"
+"24"=".DTSHD*DTSHD - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"25"=".DVR-MS*DVR-MS - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"26"=".EAC3*EAC3 - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"27"=".EVO*EVO - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"28"=".F4V*F4V - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"29"=".FLAC*FLAC - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*68"
+"30"=".FLV*FLV - Flash (FLV) video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*32"
+"31"=".IDX*IDX - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*75"
+"32"=".IFO*IFO - DVD video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*17"
+"33"=".ISO*ISO - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"34"=".K3G*K3G - phone video file*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*29"
+"35"=".LMP4*LMP4 - MPEG-4 video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*27"
+"36"=".M1A*M1A - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*49"
+"37"=".M1V*M1V - MPEG video file*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*10"
+"38"=".M2A*M2A - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*50"
+"39"=".M2T*M2T - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"40"=".M2TS*M2TS - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*77"
+"41"=".M2V*M2V - MPEG video file*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*11"
+"42"=".M3U*M3U - Playlist File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*53"
+"43"=".M3U8*M3U8 - Playlist File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"44"=".M4A*M4A - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*51"
+"45"=".M4B*M4B - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*39"
+"46"=".M4P*M4P - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*38"
+"47"=".M4V*M4V - MPEG-4 video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*26"
+"48"=".MKA*MKA - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*69"
+"49"=".MKV*MKV - Matroska video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*20"
+"50"=".MOD*MOD - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*65"
+"51"=".MOV*MOV - Quicktime video file*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*23"
+"52"=".MP2*MP2 - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*59"
+"53"=".MP2V*MP2V - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*37"
+"54"=".MP3*MP3 - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*60"
+"55"=".MP4*MP4 - MPEG-4 video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*25"
+"56"=".MPA*MPA - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*48"
+"57"=".MPC*MPC - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*66"
+"58"=".MPD*MPD - Playlist File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"59"=".MPE*MPE - MPEG video file*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*12"
+"60"=".MPEG*MPEG - MPEG video file*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*13"
+"61"=".MPG*MPG - MPEG video file*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*14"
+"62"=".MPL*MPL - Playlist File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"63"=".MPLS*MPLS - Playlist File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"64"=".MPV2*MPV2 - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*36"
+"65"=".MQV*MQV - Quicktime video file*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*24"
+"66"=".MTS*MTS - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*78"
+"67"=".MXF*MXF - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*79"
+"68"=".NSR*NSR - DRM video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"69"=".NSV*NSV - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"70"=".OGG*OGG - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*61"
+"71"=".OGM*OGM - OGM video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*19"
+"72"=".OGV*OGV - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*80"
+"73"=".OPUS*OPUS - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"74"=".PLS*PLS - Playlist File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*54"
+"75"=".PSB*PSB - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"76"=".QT*QT - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*45"
+"77"=".RA*RA - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*52"
+"78"=".RAM*RAM - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*43"
+"79"=".RM*RM - RealMedia video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*21"
+"80"=".RMVB*RMVB - RealMedia video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*22"
+"81"=".RPM*RPM - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*44"
+"82"=".RT*RT - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"83"=".SBV*SBV - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"84"=".SKM*SKM - mobile phone video file*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*30"
+"85"=".SMI*SMI - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*71"
+"86"=".SRT*SRT - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*72"
+"87"=".SSA*SSA - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*74"
+"88"=".SSF*SSF - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"89"=".SUB*SUB - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*76"
+"90"=".SUP*SUP - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"91"=".SWF*SWF - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*56"
+"92"=".TAK*TAK - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"93"=".TP*TP - MPEG2 Transport video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*16"
+"94"=".TPR*TPR - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*35"
+"95"=".TRP*TRP - MPEG2 Transport video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*34"
+"96"=".TS*TS - MPEG2 Transport video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*33"
+"97"=".TTA*TTA - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"98"=".TTML*TTML - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"99"=".USF*USF - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"100"=".VOB*VOB - DVD video files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*18"
+"101"=".VTT*VTT - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"102"=".WAV*WAV - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*70"
+"103"=".WAX*WAX - Playlist File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*55"
+"104"=".WEBM*WEBM - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"105"=".WM*WM - Windows Media files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*5"
+"106"=".WMA*WMA - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*47"
+"107"=".WMP*WMP - Windows Media files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*6"
+"108"=".WMV*WMV - Windows Media files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*7"
+"109"=".WMX*WMX - Windows Media files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*8"
+"110"=".WTV*WTV - Video File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"111"=".WV*WV - Audio File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"112"=".WVX*WVX - Windows Media files*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*9"
+"113"=".XSPF*XSPF - Playlist File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"114"=".XSS*XSS - Subtitle File*C:\\Program Files\\DAUM\\PotPlayer\\PotIcons64.dll*0"
+"115"=""
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\MainShortCutList]
+"0"="27,0,10230,0"
+"1"=""
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\Override_Settings\0000]
+"Type"=dword:00000001
+"Disabled"=dword:00000000
+"Path"=".\\Module\\AviSplitter.ax"
+"Name"="MPC AVI Source"
+"CLSID"="{CEA8DEFF-0AF7-4DB9-9A38-FB3C3AEFC0DE}"
+"FilterType"=dword:00000000
+"Merit"=dword:00600001
+"MeritHi"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\Override_Settings\0001]
+"Type"=dword:00000001
+"Disabled"=dword:00000000
+"Path"=".\\Module\\MatroskaSplitter.ax"
+"Name"="MPC Matroska Source"
+"CLSID"="{0A68C3B5-9164-4A54-AFAF-995B2FF0E0D4}"
+"FilterType"=dword:00000000
+"Merit"=dword:00600000
+"MeritHi"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\Override_Settings\0002]
+"Type"=dword:00000001
+"Disabled"=dword:00000000
+"Path"=".\\Module\\MP4Splitter.ax"
+"Name"="MPC MP4/MOV Source"
+"CLSID"="{3CCC052E-BDEE-408A-BEA7-90914EF2964B}"
+"FilterType"=dword:00000000
+"Merit"=dword:00600000
+"MeritHi"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\Override_Settings\0003]
+"Type"=dword:fffffffe
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\Positions]
+"MainX"=dword:00000154
+"MainY"=dword:00000076
+"MainWidth2"=dword:000002ae
+"MainHeight2"=dword:000001e3
+"VideoWindowWidth"=dword:ffffffff
+"VideoWindowHeight"=dword:ffffffff
+"VideoWindowRectL0"=dword:00000154
+"VideoWindowRectT0"=dword:00000076
+"VideoWindowRectR0"=dword:00000402
+"VideoWindowRectB0"=dword:00000259
+"AudioWindowRectL0"=dword:00000154
+"AudioWindowRectT0"=dword:00000076
+"AudioWindowRectR0"=dword:00000402
+"AudioWindowRectB0"=dword:00000259
+"VideoWindowState1"=dword:00000000
+"AudioWindowState1"=dword:00000000
+"VideoWindowRectL1"=dword:000001b6
+"VideoWindowRectT1"=dword:00000064
+"VideoWindowRectR1"=dword:000002f6
+"VideoWindowRectB1"=dword:000001fc
+"AudioWindowRectL1"=dword:000001b6
+"AudioWindowRectT1"=dword:00000064
+"AudioWindowRectR1"=dword:000002f6
+"AudioWindowRectB1"=dword:000001fc
+"VideoWindowState2"=dword:00000000
+"AudioWindowState2"=dword:00000000
+"VideoWindowRectL2"=dword:00000365
+"VideoWindowRectT2"=dword:00000225
+"VideoWindowRectR2"=dword:00000492
+"VideoWindowRectB2"=dword:00000308
+"AudioWindowRectL2"=dword:00000365
+"AudioWindowRectT2"=dword:00000225
+"AudioWindowRectR2"=dword:00000492
+"AudioWindowRectB2"=dword:00000308
+"ChatWindowVisible"=dword:00000000
+"PlayListWindowVisible"=dword:00000000
+"PlayListWidth"=dword:00000140
+"BroadcastListWindowVisible"=dword:00000000
+"TopMostWindow0"=dword:00000000
+"TopMostWindow1"=dword:00000000
+"TopMostWindow2"=dword:00000000
+"TopMostWindow3"=dword:00000000
+"TopMostWindow4"=dword:00000000
+"TopMostWindow5"=dword:00000000
+"TopMostWindow6"=dword:00000000
+"TopMostWindow7"=dword:00000000
+"TopMostWindow8"=dword:00000000
+"TopMostWindow9"=dword:00000000
+"ControlBoxWidth"=dword:0000012d
+"ControlBoxHeight"=dword:000000e3
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\RememberFiles]
+"0"="0=D:\\Downloads\\HP3 (2004) 1080P HDR x265 [Hin-Eng] ~ PeruGuy\\(Sample) Harry Potter and the Prisoner of Azkaban (2004) 1080p HDR ~ PeruGuy.mkv"
+"0_a"=dword:00000001
+"1"="0=D:\\Downloads\\Harry.Potter.and.the.Order.of.the.Phoenix.2007.1080p.10bit.BluRay.6CH.x265.HEVC-PSA\\mysubtitledmovie.mkv"
+"2"="4503=E:\\Downloads\\Seinfeld (complete series) 120GB MP4 vers 1080p H.264  (moviesbyrizzo TV uploads)\\Seinfeld  (S05EP05)  The Bris 1080p H.264 (moviesbyrizzo TV series uploads).mp4"
+"3"="0=E:\\Downloads\\Peaky Blinders COMPLETE SEASONS PSA\\Peaky.Blinders.SEASON.05.S05.COMPLETE.1080p.10bit.WebRip.6CH.x265.HEVC-PSA\\Peaky.Blinders.S05E05.The.Shock.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.mkv"
+"4"="0=E:\\Downloads\\The.Witcher.Blood.Origin.S01.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-SMURF[TGx]\\The.Witcher.Blood.Origin.S01E02.Of.Dreams.Defiance.and.Desperate.Deeds.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-SMURF.mkv"
+"5"="0=E:\\Downloads\\Beckham.S01.1080p.NF.WEB-DL.DDP5.1.H.264-FLUX\\Beckham.S01E02.Seeing.Red.1080p.NF.WEB-DL.DDP5.1.H.264-FLUX.mkv"
+"5_c1"=dword:00000001
+"6"="0=E:\\Downloads\\Beckham.S01.1080p.NF.WEB-DL.DDP5.1.H.264-FLUX\\Beckham.S01E03.Goldenballs.1080p.NF.WEB-DL.DDP5.1.H.264-FLUX.mkv"
+"6_c1"=dword:00000001
+"7"="0=E:\\Downloads\\Beckham.S01.1080p.NF.WEB-DL.DDP5.1.H.264-FLUX\\Beckham.S01E04.What.Makes.David.Run.1080p.NF.WEB-DL.DDP5.1.H.264-FLUX.mkv"
+"7_c1"=dword:00000001
+"8"="13465=E:\\Downloads\\Beckham.S01.1080p.NF.WEB-DL.DDP5.1.H.264-FLUX\\Beckham.S01E01.The.Kick.1080p.NF.WEB-DL.DDP5.1.H.264-FLUX.mkv"
+"8_c1"=dword:00000001
+"9"="0=E:\\Downloads\\Barbie.2023.1080p.MA.WEB-DL.DDP5.1.Atmos.H.264-FLUX.mkv"
+"9_c1"=dword:00000001
+"10"="0=E:\\Downloads\\The.Witcher.Blood.Origin.S01.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-SMURF[TGx]\\The.Witcher.Blood.Origin.S01E01.Of.Ballads.Brawlers.and.Bloodied.Blades.1080p.NF.WEB-DL.DDP5.1.Atmos.H.264-SMURF.mkv"
+"11"=""
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64\Settings]
+"MftDecoder"=dword:00000001
+"DmoDecoder"=dword:00000001
+"Info1"=""
+"Info6"=""
+"Info7"=""
+"RestoreDefault"=dword:00000000
+"LastConfigPage"=dword:00000162
+"LastFilterPage"=dword:00000168
+"PlaybackMode"=dword:00000001
+"LastPlayListName"="PotPlayerMini64.dpl"
+"LastSkinTypeTouch"=dword:00000000
+"LastSkinName"=""
+"LastSkinXmlName"="VideoSkin.xml"
+"LastSkinXmlNameVideo"="VideoSkin.xml"
+"LastSkinXmlNameAudio"="AudioSkin.xml"
+"SaveInputOnly"=dword:00000001
+"ScrVideoDevice2"=dword:00000001
+"ScrWidthMouseCursor"=dword:00000001
+"VideoRen2"=dword:0000000f
+"AudioVolume"=dword:0000003b
+"CaptionStyle"="5;5;5;5;1;0;2.000000;2.000000;3.000000;3.000000;0xffffff;0x000000;0x000000;0x000000;0x00;0x00;0x00;0x90;1;Segoe UI;15.000000;100.000000;100.000000;0.000000;400;0;0;0;0;0.000000;0.000000;0.000000;0.000000;2;0;1;50;95;0.000000;0;0"
+"DisplayBookmark"=dword:00000000
+"PlaybackFailSkip"=dword:00000002
+"VideoPropertyHwFirst"=dword:00000001
+"LevelOutMin"=dword:00000010
+"LevelOutMax"=dword:000000eb
+"LevelGamma"=dword:00000078
+"EqulizerValue"=hex:00,00,a0,41,00,00,70,41,00,00,00,00,00,00,f0,c1,00,00,20,c2,00,00,20,c2,00,00,00,00,00,00,f0,41,00,00,20,42,00,00,20,42
+"AudioCrystalityBoost"=dword:0000003c
+"AudioCrystalityStereo"=dword:00000016
+"PlayScreenSize"=dword:00000000
+"PlayScreenUserWidth"=dword:000002a8
+"PlayScreenUserHeight"=dword:00000180
+"CloseOnComplete"=dword:00000001
+"OpenWithSameName"=dword:00000000
+"RememberPosition"=dword:00000001
+"RememberPositionAudio"=dword:00000001
+"UsePrePixelShader"=dword:00000000
+"UsePostPixelShader"=dword:00000000
+"ResizeMinWidth"=dword:00000505
+"ResizeMinHeight"=dword:000002d5
+"ResizeWidth"=dword:00000500
+"ResizeHeight"=dword:000002d0
+"AllowMultiple"=dword:00000000
+"UseDVDDefaultPath"=dword:00000000
+"DVDMenuLang"=dword:00000419
+"DVDAudioLang"=dword:00000419
+"DVDCaptionLang"=dword:00000419
+"DVDRestorePosition"=dword:00000000
+"EffectPage"=dword:00000000
+"EffectCastOnly"=dword:00000001
+"SkipCastPreview"=dword:00000000
+"ChatAttachToMain2"=dword:00000000
+"BroadcastAttachToMain2"=dword:00000000
+"PlaylistAttachSize2"=dword:0000013d
+"PrefCapLang"="english&sdh english eng en encc"
+"PrefAudLang"="rus"
+"AudioCaptureBitrate"=dword:00000003
+"SavePlayList"=dword:00000000
+"AutoPlayPL"=dword:00000000
+"FocusSetPL"=dword:00000001
+"AudExpandCenter"=dword:00000000
+"AudExpandSurround"=dword:00000000
+"AudCenterLevel"=dword:000000c8
+"VideoTransformFourccValue"="H264 AVC1 WVC1 MPG2 H265 HVC1 VP90 AV01"
+"PlayUseKeyFrame"=dword:00000000
+"IntDXVAUseMode"=dword:00000001
+"IntDXVAUpperHoriVal"=dword:00000f00
+"IntDXVAUpperVertVal"=dword:00000870
+"IntDXVALowerHoriVal"=dword:00000320
+"IntDXVALowerVertVal"=dword:00000258
+"IntDXVALowerOrAnd"=dword:00000000
+"IntDXVAMPEG1"=dword:00000000
+"UseSelfDxva"=dword:00000001
+"WinampDspPath"=".\\Plugins"
+"WinampDspIndex"=dword:ffffffff
+"MouseLeftSClick"=dword:00000004
+"MouseLeftDClick"=dword:00000001
+"MouseMiddleClick"=dword:0000000c
+"HqRgbConv"=dword:00000001
+"DeinterlaceMethodExist"=dword:00000000
+"StartScreenSize"=dword:00000003
+"StartScreenSizeUserW"=dword:000002a8
+"StartScreenSizeUserH"=dword:00000180
+"StartCenterPos"=dword:00000001
+"CaptionTranslateEngine2"="SubtitleTranslate - Google.as"
+"WdmCountryCode"=dword:00000007
+"IntH265_0"=dword:00000001
+"VMR9VSync"=dword:00000000
+"VMR9VSyncInternal"=dword:00000000
+"D3DFullScreenUi"=dword:00000000
+"MessageFontSize"=dword:00000010
+"MessageTextColor"=dword:ffc0c0c0
+"MessageFileName"=dword:00000000
+"ThumbnailSameDir"=dword:00000001
+"SO_NoMouseMove"=dword:00000001
+"SO_Thumbnail"=dword:00000000
+"SO_LargeSelect"=dword:00000000
+"SO_FolderOpen"=dword:00000000
+"SO_FolderOpenSub"=dword:00000000
+"SO_History"=dword:00000000
+"SO_SceneTime"=dword:00000000
+"SO_SceneChapter"=dword:00000000
+"SO_SceneCaption"=dword:00000000
+"SO_Bookmark"=dword:00000000
+"SO_Lib"=dword:00000000
+"AutoHideSkin"=dword:00000001
+"MovieCaptureFormat"=dword:00000100
+"MovieCaptureVidCodec"=dword:00000190
+"MovieCaptureVidBitrate"=dword:00000bb8
+"MovieCaptureAudCodec"=dword:00002bc0
+"WebCaptionLoad"=dword:00000000
+"AttachWindowIndex"=dword:00000002
+"SkinDefaultStart"=dword:00000001
+"SkinSizePersist"=dword:00000001
+"SkinPopupMenuStyle"=dword:00000001
+"Win7WorkTool"=dword:00000000
+"UseSideWindow"=dword:00000000
+"TerminateTimeHour"=dword:00000003
+"TerminateTimeMin"=dword:00000000
+"TerminateTimeSec"=dword:00000000
+"TerminateDelay"=dword:000000b4
+"IntAudioRenDSUseFade"=dword:00000000
+"TouchSupport"=dword:00000000
+"LastCheckDays"=dword:00004c96
+"FastAutoUpdate"=dword:00000001
+"AutoDownloadFile"=dword:00000000
+"FileLinkEnqueue"=dword:00000000
+"FileLinkPlay"=dword:00000000
+"AvisynthScript"="svp=1 alg=0 fim=1 am=0 uhd=0 gpu=0 fps=60 import(\"svp.avs\")"
+"AvisynthBufferBack"=dword:00000000
+"PlayMoveTime0"=dword:00000003
+
+[HKEY_CURRENT_USER\Software\Daum\PotPlayerMini64]
+"ServiceValue"=dword:00000000
+"MInfo2"="qGhPh/ZShSeY0asIxrW8ua3FnPziVrZyN2VsZDmKEpQVmm6f;JtyrVlkA99dROfOwz/F74u4iVsHSpmrZ4+o2g+2Hz5SaifKkmXd6sHAEQ6hGSKYHSj8Fs3l9jzimUQIvslh6l29OB9yhcQQeE50nSRMWTCtcTHpQ"
+""=dword:00000000
+"AddMyComPL"=dword:00000001
+

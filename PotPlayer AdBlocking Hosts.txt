@@ -1,6 +1,0 @@
-0.0.0.0 p1-play.kgslb.com
-0.0.0.0 kyson.ad.daum.net
-0.0.0.0 display.ad.daum.net
-0.0.0.0 analytics.ad.daum.net
-0.0.0.0 p1-play.edge4k.com
-0.0.0.0 p2-play.edge4k.com

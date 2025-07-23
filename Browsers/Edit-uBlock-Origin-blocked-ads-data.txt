@@ -1,0 +1,30 @@
+In Firefox:
+
+Open about:debugging, the click "This Firefox"
+
+Scroll down and find uBO
+
+Click on "Inspect"
+
+Switch to console tab
+
+copy-paste commands line by line, and apply them by Enter: (replace 123 by actual noted numbers):
+
+µBlock.localSettings.blockedRequestCount = 123;
+µBlock.localSettings.allowedRequestCount = 123;
+µBlock.saveLocalSettings();
+vAPI.app.restart();
+  
+In Chrome/Edge
+Go to chrome://extensions or edge://extensions
+
+enable "Developer mode"
+
+click on background.html in uBO tile
+
+copy-paste commands line by line, and apply them by Enter: (replace 123 by actual noted numbers):
+
+µBlock.localSettings.blockedRequestCount = 123;
+µBlock.localSettings.allowedRequestCount = 123;
+µBlock.saveLocalSettings();
+vAPI.app.restart();
