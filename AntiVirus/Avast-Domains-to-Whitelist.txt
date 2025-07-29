@@ -12,7 +12,7 @@
 @@||push.ff.avast.com^
 @@||shepherd.ff.avast.com^
 @@||streamback.ff.avast.com^
-@@||streamback.ns1.ff.avast.com^important
+@@||streamback.ns1.ff.avast.com^
 @@||su.ff.avast.com^
 @@||submit.sb.avast.com^
 @@||t.av.st^
