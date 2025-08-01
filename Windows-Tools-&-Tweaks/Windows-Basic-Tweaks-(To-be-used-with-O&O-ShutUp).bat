@@ -433,7 +433,6 @@ rem Windows's built-in time syncing method is often buggy and doesn't work, so t
 sc config w32time start= disabled
 
 rem As an alternative the "Update Time" app by Sordum has been used to sync time - https://www.sordum.org/9203/update-time-v1-3/
-
 rem copy UpdateTime folder to Program Files - Copying to the program files is not necessary but recommended to store it in the system drive
 
 xcopy "E:\Portables\UpdateTime" "C:\Program Files\UpdateTime\" /e /i /y
