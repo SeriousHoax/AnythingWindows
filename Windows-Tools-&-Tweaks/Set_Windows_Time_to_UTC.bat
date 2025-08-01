@@ -1,14 +1,16 @@
 @echo off
+
 rem Apply registry settings to set RealTimeIsUniversal to 1
 echo Applying registry settings...
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /t REG_DWORD /d 1 /f
 
-rem Disable the w32time service
+rem Windows's built-in time syncing method is often buggy and doesn't work, so the `Windows Time` service is disabled
 echo Disabling w32time service...
 sc config w32time start= disabled
 
-rem Windows's built-in time syncing method is often buggy and doesn't work. So the "Update Time" app by Sordum has been used - https://www.sordum.org/9203/update-time-v1-3/
-rem copy UpdateTime folder to Program Files - Copying to the program files is not necessary but recommended to store it in the system drive
+rem As an alternative the "Update Time" app by Sordum has been used to sync time - https://www.sordum.org/9203/update-time-v1-3/
+rem Copy UpdateTime folder to Program Files - Copying to the program files is not necessary but recommended to store it in the system drive
+
 echo copying updatetime folder to program files...
 xcopy "E:\Portables\UpdateTime" "C:\Program Files\UpdateTime\" /e /i /y
 
