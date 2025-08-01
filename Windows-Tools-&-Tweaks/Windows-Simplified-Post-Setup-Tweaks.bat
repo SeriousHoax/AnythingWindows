@@ -544,6 +544,25 @@ netsh advfirewall firewall add rule name="Microsoft Edge" dir=in action=block pr
 netsh advfirewall firewall add rule name="Tixati Portable" dir=in action=block program="E:\Portables\Tixati Portable\tixati_Windows64bit.exe" enable=yes
 netsh advfirewall firewall add rule name="WOMicClient" dir=in action=block program="C:\Program Files (x86)\WOMic\WOMicClient.exe" enable=yes
 
+rem Set Windows Time to UTC - Prevents messing up system time after booting Linux ISOs
+
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /t REG_DWORD /d 1 /f
+
+rem Windows's built-in time syncing method is often buggy and doesn't work, so the `Windows Time` service is disabled
+
+sc config w32time start= disabled
+
+rem As an alternative the "Update Time" app by Sordum has been used to sync time - https://www.sordum.org/9203/update-time-v1-3/
+
+rem copy UpdateTime folder to Program Files - Copying to the program files is not necessary but recommended to store it in the system drive
+
+xcopy "E:\Portables\UpdateTime" "C:\Program Files\UpdateTime\" /e /i /y
+
+rem Create the Update-Time service to sync time at every system startup
+
+sc create Update-Time binpath= "\"C:\Program Files\UpdateTime\UpdateTime.exe\" /Service" displayname= "Update Time v1-3" start= auto
+sc description Update-Time "Automatically Synchronize Computer date and time on Windows Startup."
+
 rem Microsoft Defender Hash Log, Startup Update, Cloud Protection Level, Cloud Timeout Extend and PUP Protection
 
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\MpEngine" /v "MpBafsExtendedTimeout" /t REG_DWORD /d "50" /f
