@@ -34,33 +34,6 @@ rem Remove unnecessary files/folders
 rd "C:\Users\AniK\Favorites" /s /q
 rd "C:\Users\AniK\Links" /s /q
 
-rem winget list
-winget uninstall "cortana"
-winget uninstall "get help"
-winget uninstall "microsoft people"
-winget uninstall "Mail and Calendar"
-winget uninstall "microsoft tips"
-winget uninstall "Feedback Hub"
-winget uninstall "windows camera"
-winget uninstall "windows maps"
-winget uninstall "Microsoft Teams"
-winget uninstall "Microsoft News"
-winget uninstall "MSN Weather"
-winget uninstall "Office"
-winget uninstall "Microsoft Solitaire Collection"
-winget uninstall "Microsoft To Do"
-winget uninstall "Movies & TV"
-winget uninstall "Quick Assist"
-winget uninstall "Clipchamp"
-winget uninstall "Power Automate"
-
-rem https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/enable-or-disable-windows-features-using-dism
-rem DISM /Online /Get-Features /Format:Table
-
-Dism /Online /Disable-Feature /FeatureName:MicrosoftWindowsPowerShellV2 /Quiet /NoRestart
-Dism /Online /Disable-Feature /FeatureName:MicrosoftWindowsPowerShellV2Root /Quiet /NoRestart
-Dism /Online /Disable-Feature /FeatureName:WorkFolders-Client /Quiet /NoRestart
-
 rem ================================ Windows Error Reporting ===============================
 
 rem https://docs.microsoft.com/en-us/windows/win32/wer/wer-settings
@@ -204,6 +177,9 @@ rem ...................................... Keyboard ............................
 rem Sticky keys / 26 - Disable All / 511 - Default
 reg add "HKCU\Control Panel\Accessibility\StickyKeys" /v "Flags" /t reg_SZ /d "26" /f
 
+rem Enable Clipboard history
+reg add "HKCU\Software\Microsoft\Clipboard" /v EnableClipboardHistory /t reg_DWORD /d 1 /f
+
 rem =================================== Windows Settings ===================================
 rem --------------------------------- Bluetooth & Devices ----------------------------------
 rem ...................................... Autoplay .......................................
@@ -223,22 +199,14 @@ reg add "HKLM\Software\Microsoft\WcmSvc\wifinetworkmanager\config" /v "AutoConne
 
 rem Setup DNS over HTTPS (DoH) Add Custom Servers
 
-rem netsh dns add encryption server=**.**.**.*** dohtemplate=https://dns.nextdns.io/******/***-PC autoupgrade=yes udpfallback=no
-rem netsh dns add encryption server=**.**.**.*** dohtemplate=https://dns.nextdns.io/******/***-PC autoupgrade=yes udpfallback=no
 netsh dns add encryption server=94.140.14.14 dohtemplate=https://dns.adguard.com/dns-query autoupgrade=yes udpfallback=no
 netsh dns add encryption server=94.140.15.15 dohtemplate=https://dns.adguard.com/dns-query autoupgrade=yes udpfallback=no
 netsh dns add encryption server=76.76.2.42 dohtemplate=https://freedns.controld.com/x-hagezi-proplus autoupgrade=yes udpfallback=no
 netsh dns add encryption server=76.76.10.42 dohtemplate=https://freedns.controld.com/x-hagezi-proplus autoupgrade=yes udpfallback=no
-
-rem Disable IPv6
-netsh int ipv6 isatap set state disabled
-netsh int teredo set state disabled
-netsh interface ipv6 6to4 set state state=disabled undoonstop=disabled
-reg add "HKLM\Software\Policies\Microsoft\Windows\TCPIP\v6Transition" /v "6to4_State" /t REG_SZ /d "Disabled" /f
-reg add "HKLM\Software\Policies\Microsoft\Windows\TCPIP\v6Transition" /v "ISATAP_State" /t REG_SZ /d "Disabled" /f
-reg add "HKLM\Software\Policies\Microsoft\Windows\TCPIP\v6Transition" /v "Teredo_State" /t REG_SZ /d "Disabled" /f
-reg add "HKLM\System\CurrentControlSet\Services\Tcpip6\Parameters" /v "DisabledComponents" /t REG_DWORD /d "255" /f
-reg add "HKLM\System\CurrentControlSet\Services\Tcpip6\Parameters" /v "EnableICSIPv6" /t REG_DWORD /d "255" /f
+netsh dns add encryption server=76.76.2.2 dohtemplate=https://freedns.controld.com/p2 autoupgrade=yes udpfallback=no
+netsh dns add encryption server=76.76.10.2 dohtemplate=https://freedns.controld.com/p2 autoupgrade=yes udpfallback=no
+netsh dns add encryption server=76.76.2.4 dohtemplate=https://freedns.controld.com/family autoupgrade=yes udpfallback=no
+netsh dns add encryption server=76.76.10.4 dohtemplate=https://freedns.controld.com/family autoupgrade=yes udpfallback=no
 
 rem =================================== Windows Settings ===================================
 rem ----------------------------------- Personalization ------------------------------------
@@ -254,12 +222,6 @@ rem ....................................... Colors .............................
 
 rem 1 - Transparency Effects
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "EnableTransparency" /t reg_DWORD /d "1" /f
-
-rem 1 - Show accent color on Start and taskbar
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "ColorPrevalence" /t reg_DWORD /d "1" /f
-
-rem 1 - Show accent color on the title bars and windows borders
-reg add "HKCU\Software\Microsoft\Windows\DWM" /v "ColorPrevalence" /t reg_DWORD /d "1" /f
 
 rem =================================== Windows Settings ===================================
 rem ----------------------------------- Personalization ------------------------------------
@@ -444,8 +406,8 @@ sc description Update-Time "Automatically Synchronize Computer date and time on 
 
 rem Microsoft Defender Hash Log, Startup Update, Cloud Protection Level, Cloud Timeout Extend and PUP Protection
 
+powershell -Command "Set-MpPreference -PUAProtection Enabled"
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\MpEngine" /v "MpBafsExtendedTimeout" /t REG_DWORD /d "50" /f
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\MpEngine" /v "MpEnablePus" /t REG_DWORD /d "1" /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Signature Updates" /v "UpdateOnStartUp" /t REG_DWORD /d "1" /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v "ThreatFileHashLogging" /t REG_DWORD /d "1" /f
 
