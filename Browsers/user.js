@@ -1,7 +1,7 @@
 /*
 *    Name: SeriousHoax's user.js for Firefox
-*    Date: 2025-09-26
-* Version: 22
+*    Date: 2025-11-04
+* Version: 23
 *     URL: https://github.com/SeriousHoax/AnythingWindows/blob/main/user.js
 */
 
@@ -51,17 +51,18 @@ user_pref("media.autoplay.default", 1);
 user_pref("middlemouse.scrollbarPosition", true);
 user_pref("network.cookie.cookieBehavior", 5);
 user_pref("network.dns.echconfig.enabled", true);
-user_pref("network.http.referer.disallowCrossSiteRelaxingDefault", true);
 user_pref("network.http.referer.disallowCrossSiteRelaxingDefault.top_navigation", true);
+user_pref("network.http.referer.disallowCrossSiteRelaxingDefault", true);
 user_pref("network.http.windows-sso.enabled", true);
 user_pref("network.IDN_show_punycode", true);
+user_pref("network.lna.blocking", true);
 user_pref("privacy.donottrackheader.enabled", true);
 user_pref("privacy.fingerprintingProtection", true);
 user_pref("privacy.globalprivacycontrol.enabled", true);
 user_pref("privacy.partition.network_state.ocsp_cache", true);
-user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
-user_pref("privacy.query_stripping.enabled", true);
 user_pref("privacy.query_stripping.enabled.pbmode", true);
+user_pref("privacy.query_stripping.enabled", true);
+user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 user_pref("privacy.trackingprotection.cryptomining.enabled", true);
 user_pref("privacy.trackingprotection.emailtracking.enabled", true);
 user_pref("privacy.trackingprotection.enabled", false);
