@@ -1,18 +1,18 @@
 /*
 *    Name: SeriousHoax's user.js for Firefox
-*    Date: 2025-11-04
-* Version: 23
+*    Date: 2026-02-08
+* Version: 24
 *     URL: https://github.com/SeriousHoax/AnythingWindows/blob/main/user.js
 */
 
 user_pref("accessibility.force_disabled", 1);
 user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("browser.aboutConfig.showWarning", false);
+user_pref("browser.cache.disk.enable", false);
 user_pref("browser.compactmode.show", true);
 user_pref("browser.contentblocking.category", "custom");
 user_pref("browser.download.dir", "E:\\Downloads\\Browser Downloads");
 user_pref("browser.download.folderList", 2);
-user_pref("browser.tabs.firefox-view", false);
 user_pref("browser.newtab.privateAllowed", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", false);
@@ -28,6 +28,7 @@ user_pref("browser.privateWindowSeparation.enabled", false);
 user_pref("browser.promo.focus.enabled", false);
 user_pref("browser.search.separatePrivateDefault.ui.enabled", true);
 user_pref("browser.tabs.closeWindowWithLastTab", false);
+user_pref("browser.tabs.firefox-view", false);
 user_pref("browser.tabs.loadBookmarksInBackground", true);
 user_pref("browser.tabs.warnOnClose", true);
 user_pref("browser.toolbars.bookmarks.visibility", "always");
@@ -35,8 +36,8 @@ user_pref("browser.uidensity", 1);
 user_pref("browser.urlbar.autoFill.adaptiveHistory.enabled", true);
 user_pref("browser.urlbar.showSearchTerms.enabled", false);
 user_pref("browser.urlbar.trimURLs", false);
-user_pref("cookiebanners.service.mode", 2);
 user_pref("cookiebanners.service.mode.privateBrowsing", 2);
+user_pref("cookiebanners.service.mode", 2);
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
 user_pref("extensions.getAddons.showPane", false);
