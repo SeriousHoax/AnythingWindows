@@ -29,10 +29,11 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\ReserveManager" /v "Misc
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\ReserveManager" /v "PassedPolicy" /t reg_DWORD /d "0" /f
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\ReserveManager" /v "ShippedWithReserves" /t reg_DWORD /d "0" /f
 
+
 rem Remove unnecessary files/folders
 
-rd "C:\Users\AniK\Favorites" /s /q
-rd "C:\Users\AniK\Links" /s /q
+rd "%USERPROFILE%\Favorites" /s /q
+rd "%USERPROFILE%\Links" /s /q
 
 rem ================================ Windows Error Reporting ===============================
 
@@ -104,6 +105,9 @@ reg delete "HKLM\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\
 rem Remove Gallery from Navigation Pane in File Explorer
 reg add "HKCU\Software\Classes\CLSID\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}" /v "System.IsPinnedToNameSpaceTree" /t REG_DWORD /d "0" /f
 
+rem 1 - Show files from Office.com
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer" /v "ShowCloudFilesInQuickAccess" /t REG_DWORD /d "0" /f
+
 rem 1 - Always show more details in copy dialog
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" /v "EnthusiastMode" /t reg_DWORD /d "1" /f
 
@@ -136,25 +140,11 @@ reg add "HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters" /v "SMB
 
 rem =============================== Windows Scheduled Tasks ================================
 
-schtasks /DELETE /TN "AMDLinkUpdate" /f
-schtasks /DELETE /TN "AMDRyzenMasterSDKTask" /f
-schtasks /DELETE /TN "AMDInstallLauncher" /f
-schtasks /DELETE /TN "ModifyLinkUpdate" /f
-schtasks /DELETE /TN "StartDVR" /f
-
 schtasks /Change /TN "Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /Disable
 schtasks /Change /TN "Microsoft\Windows\Application Experience\PcaPatchDbTask" /Disable
 schtasks /Change /TN "Microsoft\Windows\Application Experience\ProgramDataUpdater" /Disable
 schtasks /Change /TN "Microsoft\Windows\Customer Experience Improvement Program\Consolidator" /Disable
 schtasks /Change /TN "Microsoft\Windows\Customer Experience Improvement Program\UsbCeip" /Disable
-
-schtasks /DELETE /TN "Microsoft\Office\Office Automatic Updates 2.0" /f
-schtasks /DELETE /TN "Microsoft\Office\Office ClickToRun Service Monitor" /f
-schtasks /DELETE /TN "Microsoft\Office\Office Feature Updates" /f
-schtasks /DELETE /TN "Microsoft\Office\Office Feature Updates Logon" /f
-schtasks /DELETE /TN "Microsoft\Office\OfficeTelemetryAgentFallBack2016" /f
-schtasks /DELETE /TN "Microsoft\Office\OfficeTelemetryAgentLogOn2016" /f
-schtasks /DELETE /TN "Microsoft\Office\Office Performance Monitor" /f
 
 rem =============================== Windows Services ========================
 
@@ -163,6 +153,9 @@ sc config DiagTrack start= disabled
 
 rem Geolocation Service
 sc config lfsvc start= disabled
+
+rem Windows Search
+sc config wsearch start=disabled
 
 rem Remote Desktop Services
 sc config TermService start= disabled
@@ -179,6 +172,9 @@ reg add "HKCU\Control Panel\Accessibility\StickyKeys" /v "Flags" /t reg_SZ /d "2
 
 rem Enable Clipboard history
 reg add "HKCU\Software\Microsoft\Clipboard" /v EnableClipboardHistory /t reg_DWORD /d 1 /f
+
+rem Disable "Use the Print Screen key to open screen capture"
+reg add "HKCU\Control Panel\Keyboard" /v PrintScreenKeyForSnippingEnabled /t REG_DWORD /d 0 /f
 
 rem =================================== Windows Settings ===================================
 rem --------------------------------- Bluetooth & Devices ----------------------------------
@@ -220,8 +216,27 @@ rem =================================== Windows Settings =======================
 rem ----------------------------------- Personalization ------------------------------------
 rem ....................................... Colors .........................................
 
-rem 1 - Transparency Effects
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "EnableTransparency" /t reg_DWORD /d "1" /f
+rem - Allow Windows to derive an accent color from the current wallpaper
+reg add "HKCU\Control Panel\Desktop" /v "AutoColorization" /t REG_DWORD /d "1" /f
+
+rem - Apply the automatically derived accent color to windows and system UI
+reg add "HKCU\Software\Microsoft\Windows\DWM" /v "EnableWindowColorization" /t REG_DWORD /d "1" /f
+
+rem - Show accent color on Start and taskbar
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "ColorPrevalence" /t REG_DWORD /d "1" /f
+
+rem - Sets apps (File Explorer, Settings) to Dark Mode
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "AppsUseLightTheme" /t REG_DWORD /d "0" /f
+
+rem - Sets system UI (Taskbar, Start Menu) to Dark Mode
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "SystemUsesLightTheme" /t REG_DWORD /d "0" /f
+
+rem - Enable transparency effects
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v "EnableTransparency" /t REG_DWORD /d "1" /f
+
+rem - Completely remove Recommended section from Windows 11 Start Menu (Windows 11 Enterprise only)
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v HideRecommendedSection /t REG_DWORD /d "1" /f
+
 
 rem =================================== Windows Settings ===================================
 rem ----------------------------------- Personalization ------------------------------------
@@ -243,9 +258,6 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "S
 rem =================================== Windows Settings ===================================
 rem ----------------------------------- Personalization ------------------------------------
 rem ....................................... Taskbar ........................................
-
-rem Task view / 0 - Off / 1 - On
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowTaskViewButton" /t reg_DWORD /d "0" /f
 
 rem Chat / 0 - Off / 1 - On
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarMn" /t reg_DWORD /d "0" /f
@@ -346,65 +358,19 @@ rem Disable Thumbnail Border for Images and Videos
 reg add "HKCR\SystemFileAssociations\image" /v "Treatment" /t REG_DWORD /d "0" /f
 reg add "HKCR\SystemFileAssociations\video" /v "Treatment" /t REG_DWORD /d "0" /f
 
-rem Make mouse cursor Black 
-
-reg add "HKCU\Control Panel\Cursors" /v "AppStarting" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\wait_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "Arrow" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\arrow_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "ContactVisualization" /t reg_DWORD /d "1" /f
-reg add "HKCU\Control Panel\Cursors" /v "Crosshair" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\cross_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "CursorBaseSize" /t reg_DWORD /d "32" /f
-reg add "HKCU\Control Panel\Cursors" /v "GestureVisualization" /t reg_DWORD /d "31" /f
-reg add "HKCU\Control Panel\Cursors" /v "Help" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\help_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "IBeam" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\beam_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "No" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\no_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "NWPen" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\pen_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "Scheme Source" /t reg_DWORD /d "2" /f
-reg add "HKCU\Control Panel\Cursors" /v "SizeAll" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\move_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "SizeNESW" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\size1_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "SizeNS" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\size4_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "SizeNWSE" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\size2_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "SizeWE" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\size3_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "UpArrow" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\up_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "Wait" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\busy_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /ve /t reg_SZ /d "Windows Black" /f
-reg add "HKCU\Control Panel\Cursors" /v "Pin" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\pin_r.cur" /f
-reg add "HKCU\Control Panel\Cursors" /v "Person" /t reg_EXPAND_SZ /d "%%SystemRoot%%\cursors\person_r.cur" /f
-
-rem Windows Firewall Block
+rem Windows Firewall
 
 netsh advfirewall firewall add rule name="CCleaner" dir=out action=block program="E:\Portables\Ccleaner Portable\CCleaner64.exe" enable=yes
 netsh advfirewall firewall add rule name="CCleaner" dir=out action=block program="E:\Portables\Ccleaner Portable\x64\CCleanerBugReport.exe" enable=yes
-netsh advfirewall firewall add rule name="Google Chrome TestingBox" dir=in action=block program="E:\Portables\Chrome Portable TestingBox\Chrome\Chrome.exe" enable=yes 
-netsh advfirewall firewall add rule name="Google Chrome Report" dir=in action=block program="E:\Portables\Chrome Portable Report\Chrome\Chrome.exe" enable=yes
 netsh advfirewall firewall add rule name="Microsoft Compatibility Telemetry" dir=out action=block program="C:\Windows\System32\CompatTelRunner.exe" enable=yes
-netsh advfirewall firewall add rule name="EagleGet Free Downloader" dir=in action=block program="E:\Portables\EagleGet Protable\EagleGet.exe" enable=yes
-netsh advfirewall firewall add rule name="filec" dir=in action=block program="E:\Portables\File Centipede\filec.exe" enable=yes
-netsh advfirewall firewall add rule name="fileu" dir=in action=block program="E:\Portables\File Centipede\fileu.exe" enable=yes
-netsh advfirewall firewall add rule name="Firefox" dir=in action=block program="C:\Program Files\Mozilla Firefox\firefox.exe" enable=yes
-netsh advfirewall firewall add rule name="LocalSend" dir=in action=block program="E:\Portables\LocalSend\localsend_app.exe" enable=yes
-netsh advfirewall firewall add rule name="Microsoft Edge" dir=in action=block program="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" enable=yes description
-netsh advfirewall firewall add rule name="Tixati Portable" dir=in action=block program="E:\Portables\Tixati Portable\tixati_Windows64bit.exe" enable=yes
-netsh advfirewall firewall add rule name="WOMicClient" dir=in action=block program="C:\Program Files (x86)\WOMic\WOMicClient.exe" enable=yes
+netsh advfirewall firewall add rule name="LocalSend" dir=in action=allow program="E:\Portables\LocalSend\localsend_app.exe" enable=yes
+netsh advfirewall firewall add rule name="Tixati Portable" dir=in action=allow program="E:\Portables\Tixati Portable\tixati_Windows64bit.exe" enable=yes
 
 rem Set Windows Time to UTC - Prevents messing up system time after booting Linux ISOs
 
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /t REG_DWORD /d 1 /f
 
-rem Windows's built-in time syncing method is often buggy and doesn't work, so the `Windows Time` service is disabled
-
-sc config w32time start= disabled
-
-rem As an alternative the "Update Time" app by Sordum has been used to sync time - https://www.sordum.org/9203/update-time-v1-3/
-rem copy UpdateTime folder to Program Files - Copying to the program files is not necessary but recommended to store it in the system drive
-
-xcopy "E:\Portables\UpdateTime" "C:\Program Files\UpdateTime\" /e /i /y
-
-rem Create the Update-Time service to sync time at every system startup
-
-sc create Update-Time binpath= "\"C:\Program Files\UpdateTime\UpdateTime.exe\" /Service" displayname= "Update Time v1-3" start= auto
-sc description Update-Time "Automatically Synchronize Computer date and time on Windows Startup."
-
-rem Microsoft Defender Hash Log, Startup Update, Cloud Protection Level, Cloud Timeout Extend and PUP Protection
+rem Microsoft Defender PUA Protection, Hash Log, Startup Update, Cloud Protection Level and Cloud Timeout Extend
 
 powershell -Command "Set-MpPreference -PUAProtection Enabled"
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\MpEngine" /v "MpBafsExtendedTimeout" /t REG_DWORD /d "50" /f
