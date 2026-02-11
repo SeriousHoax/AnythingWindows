@@ -1,33 +1,71 @@
-# On Windows, works on "CMD" with admin rights only
+# On Windows, works with admin rights only
 
 ## Chrome: Delete the "Cache" folder first
 
-mklink /D "C:\Users\AniK\AppData\Local\Google\Chrome\User Data\Default\Cache" "E:\Portables\Browser Cache\Chrome Cache"
+# PowerShell method:
+New-Item -ItemType SymbolicLink -Path "$env:LocalAppData\Google\Chrome\User Data\Default\Cache" -Target "E:\Portables\Browser Cache\Chrome-Cache"
+
+New-Item -ItemType SymbolicLink -Path "$env:LocalAppData\Google\Chrome\User Data\Default\Cache" -Target "E:\Portables\Browser Cache\Chrome-Cache"
+
+# CMD method:
+mklink /D "%LOCALAPPDATA%\Google\Chrome\User Data\Default\Cache" "E:\Portables\Browser Cache\Chrome-Cache"
+
+# RamDisk Method
+
+# PowerShell method:
+New-Item -ItemType SymbolicLink -Path "$env:LocalAppData\Google\Chrome\User Data\Default\Cache" -Target "Z:\"
+
+# CMD method:
+mklink /D "%LOCALAPPDATA%\Google\Chrome\User Data\Default\Cache" "Z:\"
 
 ## Edge: Delete the "Cache" folder first
 
-mklink /D "C:\Users\AniK\AppData\Local\Microsoft\Edge\User Data\Default\Cache" "E:\Portables\Browser Cache\Edge Cache"
+# PowerShell method:
+New-Item -ItemType SymbolicLink -Path "$env:LocalAppData\Microsoft\Edge\User Data\Default\Cache" -Target "E:\Portables\Browser Cache\Edge-Cache"
+
+# CMD method:
+mklink /D "%LOCALAPPDATA%\Microsoft\Edge\User Data\Default\Cache" "E:\Portables\Browser Cache\Edge-Cache"
+
+# RamDisk Method
+
+# PowerShell method:
+New-Item -ItemType SymbolicLink -Path "$env:LocalAppData\Microsoft\Edge\User Data\Default\Cache" -Target "Z:\"
+
+# CMD method:
+mklink /D "%LOCALAPPDATA%\Microsoft\Edge\User Data\Default\Cache" "Z:\"
+
+# PowerShell method:
+New-Item -ItemType SymbolicLink -Path "$env:LocalAppData\Microsoft\Edge\User Data\Default\Code Cache" -Target "Z:\"
+
+# CMD method:
+mklink /D "%LOCALAPPDATA%\Microsoft\Edge\User Data\Default\Code Cache" "Z:\"
+
+# PowerShell method:
+New-Item -ItemType SymbolicLink -Path "$env:LocalAppData\Microsoft\Edge\User Data\Default\IndexedDB" -Target "Z:\"
+
+# CMD method:
+mklink /D "%LOCALAPPDATA%\Microsoft\Edge\User Data\Default\IndexedDB" "Z:\"
 
 # For Linux
 
-ln -s "/mnt/FaTbOy/Portables/Browser Cache/Edge-Linux" "/home/serioushoax/.cache/microsoft-edge/Default/Cache"
+ln -s "/mnt/FaTbOy/Portables/Browser Cache/Edge-Linux" "$HOME/.cache/microsoft-edge/Default/Cache"
 
 ## Brave: Delete the "Cache" folder first
 
-mklink /D "C:\Users\AniK\AppData\Local\BraveSoftware\Brave-Browser\User Data\Default\Cache" "E:\Portables\Browser Cache\Brave Cache"
+# PowerShell method:
+New-Item -ItemType SymbolicLink -Path "$env:LocalAppData\BraveSoftware\Brave-Browser\User Data\Default\Cache" -Target "E:\Portables\Browser Cache\Brave Cache"
+
+# CMD method:
+mklink /D "%LOCALAPPDATA%\BraveSoftware\Brave-Browser\User Data\Default\Cache" "E:\Portables\Browser Cache\Brave Cache"
 
 ## Firefox: Delete the "Profiles" folder first
 
-mklink /D "C:\Users\AniK\AppData\Local\Mozilla\Firefox\Profiles" "E:\Portables\Browser Cache\Firefox Cache"
+# PowerShell method:
+New-Item -ItemType SymbolicLink -Path "$env:LocalAppData\Mozilla\Firefox\Profiles" -Target "E:\Portables\Browser Cache\Firefox Cache"
+
+# CMD method:
+mklink /D "%LOCALAPPDATA%\Mozilla\Firefox\Profiles" "E:\Portables\Browser Cache\Firefox Cache"
 
 # For Linux
 
-ln -s "/mnt/FaTbOy/Portables/Browser Cache/Firefox-Linux" "/home/serioushoax/.cache/mozilla/firefox"
-
-# Firefox, alternative solution
-
-about:config 
-
-browser.cache.disk.parent_directory as 'New String'
-
-New cache location, example: E:\Portables\Browser Cache\Firefox Cache
+ln -s "/mnt/FaTbOy/Portables/Browser Cache/Firefox-Linux" "$HOME/.cache/mozilla/firefox"
