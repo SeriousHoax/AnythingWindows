@@ -197,12 +197,20 @@ rem Setup DNS over HTTPS (DoH) Add Custom Servers
 
 netsh dns add encryption server=94.140.14.14 dohtemplate=https://dns.adguard.com/dns-query autoupgrade=yes udpfallback=no
 netsh dns add encryption server=94.140.15.15 dohtemplate=https://dns.adguard.com/dns-query autoupgrade=yes udpfallback=no
+netsh dns add encryption server=2a10:50c0::ad1:ff dohtemplate=https://dns.adguard.com/dns-query autoupgrade=yes udpfallback=no
+netsh dns add encryption server=2a10:50c0::ad2:ff dohtemplate=https://dns.adguard.com/dns-query autoupgrade=yes udpfallback=no
 netsh dns add encryption server=76.76.2.42 dohtemplate=https://freedns.controld.com/x-hagezi-proplus autoupgrade=yes udpfallback=no
 netsh dns add encryption server=76.76.10.42 dohtemplate=https://freedns.controld.com/x-hagezi-proplus autoupgrade=yes udpfallback=no
+netsh dns add encryption server=2606:1a40::42 dohtemplate=https://freedns.controld.com/x-hagezi-proplus autoupgrade=yes udpfallback=no
+netsh dns add encryption server=2606:1a40:1::42 dohtemplate=https://freedns.controld.com/x-hagezi-proplus autoupgrade=yes udpfallback=no
 netsh dns add encryption server=76.76.2.2 dohtemplate=https://freedns.controld.com/p2 autoupgrade=yes udpfallback=no
 netsh dns add encryption server=76.76.10.2 dohtemplate=https://freedns.controld.com/p2 autoupgrade=yes udpfallback=no
+netsh dns add encryption server=2606:1a40::2 dohtemplate=https://freedns.controld.com/p2 autoupgrade=yes udpfallback=no
+netsh dns add encryption server=2606:1a40:1::2 dohtemplate=https://freedns.controld.com/p2 autoupgrade=yes udpfallback=no
 netsh dns add encryption server=76.76.2.4 dohtemplate=https://freedns.controld.com/family autoupgrade=yes udpfallback=no
 netsh dns add encryption server=76.76.10.4 dohtemplate=https://freedns.controld.com/family autoupgrade=yes udpfallback=no
+netsh dns add encryption server=2606:1a40::4 dohtemplate=https://freedns.controld.com/family autoupgrade=yes udpfallback=no
+netsh dns add encryption server=2606:1a40:1::4 dohtemplate=https://freedns.controld.com/family autoupgrade=yes udpfallback=no
 
 rem =================================== Windows Settings ===================================
 rem ----------------------------------- Personalization ------------------------------------
