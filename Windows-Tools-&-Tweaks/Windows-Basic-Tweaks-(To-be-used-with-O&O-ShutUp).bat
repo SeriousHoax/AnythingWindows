@@ -163,6 +163,9 @@ sc config TermService start= disabled
 rem Windows Remote Management (WS-Management)
 sc config WinRM start= disabled
 
+rem WebClient
+sc config WebClient start= disabled
+
 rem =================================== Windows Settings ===================================
 rem ------------------------------------ Accessibility ------------------------------------
 rem ...................................... Keyboard .......................................
