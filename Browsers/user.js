@@ -2,7 +2,7 @@
 *    Name: SeriousHoax's user.js for Firefox
 *    Date: 2026-02-08
 * Version: 24
-*     URL: https://github.com/SeriousHoax/AnythingWindows/blob/main/user.js
+*     URL: https://github.com/SeriousHoax/AnythingWindows/blob/main/Browsers/user.js
 */
 
 user_pref("accessibility.force_disabled", 1);
