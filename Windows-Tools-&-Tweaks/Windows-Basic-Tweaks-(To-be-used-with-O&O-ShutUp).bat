@@ -29,6 +29,11 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\ReserveManager" /v "Misc
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\ReserveManager" /v "PassedPolicy" /t reg_DWORD /d "0" /f
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\ReserveManager" /v "ShippedWithReserves" /t reg_DWORD /d "0" /f
 
+rem perfmon
+reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\AutoLogger-Diagtrack-Listener" /v "Start" /t REG_DWORD /d "0" /f
+reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\DiagLog" /v "Start" /t REG_DWORD /d "0" /f
+reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\Diagtrack-Listener" /v "Start" /t REG_DWORD /d "0" /f
+reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\WiFiSession" /v "Start" /t REG_DWORD /d "0" /f
 
 rem Remove unnecessary files/folders
 
@@ -159,6 +164,9 @@ sc config wsearch start=disabled
 
 rem Remote Desktop Services
 sc config TermService start= disabled
+
+rem Windows Health and Optimized Experiences
+sc config whesvc start= disabled
 
 rem Windows Remote Management (WS-Management)
 sc config WinRM start= disabled
