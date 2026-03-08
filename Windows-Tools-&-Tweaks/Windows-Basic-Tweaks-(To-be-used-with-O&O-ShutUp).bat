@@ -35,6 +35,9 @@ reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\DiagLog" /v "Start
 reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\Diagtrack-Listener" /v "Start" /t REG_DWORD /d "0" /f
 reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\WiFiSession" /v "Start" /t REG_DWORD /d "0" /f
 
+rem Turn on DEP for all programs and services except those I select
+bcdedit /set nx OptOut
+
 rem Remove unnecessary files/folders
 
 rd "%USERPROFILE%\Favorites" /s /q
