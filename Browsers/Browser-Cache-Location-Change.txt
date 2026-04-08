@@ -61,7 +61,7 @@ mklink /D "%LOCALAPPDATA%\BraveSoftware\Brave-Browser\User Data\Default\Cache" "
 ## Firefox: Delete the "Profiles" folder first
 
 # PowerShell method:
-New-Item -ItemType SymbolicLink -Path "$env:LocalAppData\Mozilla\Firefox\Profiles" -Target "E:\Portables\Browser Cache\Firefox Cache"
+New-Item -ItemType SymbolicLink -Path "$env:LocalAppData\Mozilla\Firefox\Profiles" -Target "Z:\"
 
 # CMD method:
 mklink /D "%LOCALAPPDATA%\Mozilla\Firefox\Profiles" "E:\Portables\Browser Cache\Firefox Cache"
