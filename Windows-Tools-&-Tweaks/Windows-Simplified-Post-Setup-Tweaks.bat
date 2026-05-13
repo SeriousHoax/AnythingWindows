@@ -174,6 +174,9 @@ rem Enforce Cert Padding Checks to prevent bypass of digital signatures via mali
 reg add "HKLM\Software\Microsoft\Cryptography\Wintrust\Config" /v "EnableCertPaddingCheck" /t REG_DWORD /d "1" /f
 reg add "HKLM\Software\Wow6432Node\Microsoft\Cryptography\Wintrust\Config" /v "EnableCertPaddingCheck" /t REG_DWORD /d "1" /f
 
+rem Prevent modification of batch files while executing
+reg add "HKLM\Software\Microsoft\Command Processor" /v "LockBatchFilesWhenInUse" /t REG_DWORD /d 1 /f
+
 rem =============================== Windows Scheduled Tasks ================================
 
 schtasks /DELETE /TN "AMDLinkUpdate" /f
