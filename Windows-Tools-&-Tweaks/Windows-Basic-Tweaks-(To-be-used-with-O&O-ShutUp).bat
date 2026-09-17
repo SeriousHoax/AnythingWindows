@@ -464,11 +464,20 @@ reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation
 rem - Configure Windows Time for more accurate NTP synchronization since the default config often bugs out and stops syncing time
 
 rem - Configure Cloudflare, Meta and Google NTP server IPs as the NTP providers
-w32tm /config /manualpeerlist:"162.159.200.123,0x8 129.134.25.123,0x8 216.239.35.12,0x8" /syncfromflags:MANUAL /update
+w32tm /config /manualpeerlist:"162.159.200.123,0x8 129.134.25.123,0x8 2606:4700:f1::1,0x8" /syncfromflags:MANUAL /update
 
-rem - Use adaptive polling: 64 seconds minimum, 1024 seconds maximum
+rem - Adaptive polling: 64s minimum, 128s maximum
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config" /v "MinPollInterval" /t REG_DWORD /d "6" /f
-reg add "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config" /v "MaxPollInterval" /t REG_DWORD /d "10" /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config" /v "MaxPollInterval" /t REG_DWORD /d "7" /f
+
+rem - Faster phase correction
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config" /v "PhaseCorrectRate" /t REG_DWORD /d "1" /f
+
+rem - Gradual corrections tick every 1s
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config" /v "UpdateInterval" /t REG_DWORD /d "100" /f
+
+rem - Any offset over 1s steps immediately instead of drifting in gradually
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config" /v "MaxAllowedPhaseOffset" /t REG_DWORD /d "1" /f
 
 rem - Fix the default trigger-start behavior, which stops the service on non-domain-joined (workgroup) machines
 net stop w32time >nul 2>&1
