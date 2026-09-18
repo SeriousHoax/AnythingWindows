@@ -464,7 +464,7 @@ reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation
 rem - Configure Windows Time for more accurate NTP synchronization since the default config often bugs out and stops syncing time
 
 rem - Configure Cloudflare and Meta NTP server IPs as the NTP providers
-w32tm /config /manualpeerlist:"162.159.200.123,0x8 129.134.25.123,0x8 2606:4700:f1::1,0x8" /syncfromflags:MANUAL /update
+w32tm /config /manualpeerlist:"162.159.200.123,0x8 129.134.25.123,0x8 2606:4700:f1::1,0x8 2a03:2880:ff08::123,0x8" /syncfromflags:MANUAL /update
 
 rem - Adaptive polling: 64s minimum, 128s maximum
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config" /v "MinPollInterval" /t REG_DWORD /d "6" /f
