@@ -463,7 +463,7 @@ reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation
 
 rem - Configure Windows Time for more accurate NTP synchronization since the default config often bugs out and stops syncing time
 
-rem - Configure Cloudflare, Meta and Google NTP server IPs as the NTP providers
+rem - Configure Cloudflare and Meta NTP server IPs as the NTP providers
 w32tm /config /manualpeerlist:"162.159.200.123,0x8 129.134.25.123,0x8 2606:4700:f1::1,0x8" /syncfromflags:MANUAL /update
 
 rem - Adaptive polling: 64s minimum, 128s maximum
