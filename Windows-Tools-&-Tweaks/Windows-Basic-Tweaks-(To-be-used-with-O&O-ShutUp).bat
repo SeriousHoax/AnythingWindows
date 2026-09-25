@@ -20,7 +20,9 @@ if %errorlevel% NEQ 0 (
 :gotAdmin
 :--------------------------------------
 
-rem - Disable Hibernate
+:: =============================== Windows Optimizations ================================
+
+rem - Disable Fast Startup and Hibernation
 
 powercfg -h off
 
@@ -31,7 +33,7 @@ reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\ReserveManager" /v "Misc
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\ReserveManager" /v "PassedPolicy" /t reg_DWORD /d "0" /f
 reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\ReserveManager" /v "ShippedWithReserves" /t reg_DWORD /d "0" /f
 
-rem - perfmon
+rem Disables automatic startup of diagnostic, telemetry, and Wi-Fi ETW logging sessions.
 
 reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\AutoLogger-Diagtrack-Listener" /v "Start" /t REG_DWORD /d "0" /f
 reg add "HKLM\System\CurrentControlSet\Control\WMI\Autologger\DiagLog" /v "Start" /t REG_DWORD /d "0" /f
@@ -42,10 +44,25 @@ rem - Turn on DEP for all programs and services except those I select
 
 bcdedit /set nx OptOut
 
-rem - Remove unnecessary files/folders
+rem - 1 - Disable recording NTFS last-access timestamp, To query the current state - fsutil behavior query disablelastaccess
 
-rd "%USERPROFILE%\Favorites" /s /q
-rd "%USERPROFILE%\Links" /s /q
+fsutil behavior set disablelastaccess 1
+
+rem - 2 - Increases NTFS memory usage for filesystem metadata/cache; reduces disk I/O at the cost of slightly more RAM / 1 - Default
+
+fsutil behavior set memoryusage 2
+
+rem - 0 - Keeps kernel and driver code in physical RAM instead of paging it to disk; may use more RAM / 1 - Default
+
+reg add "HKLM\System\CurrentControlSet\Control\Session Manager\Memory Management" /v "DisablePagingExecutive" /t REG_DWORD /d "1" /f
+
+rem - 4 - Disables Windows' NDU component that tracks per-app network usage 
+
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Ndu" /v Start /t REG_DWORD /d 4 /f
+
+rem - Stops the DPS service first to clear Windows network usage history by deleting the SRU database and then restarts DPS.
+
+sc stop DPS && del /f /s /q /a "%windir%\System32\sru\*" && sc start DPS
 
 :: ================================ Windows Error Reporting ===============================
 
@@ -140,6 +157,11 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\OperationStatus
 rem - Disable 260 character limit for file path
 
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
+
+rem - Remove unnecessary files/folders
+
+rd "%USERPROFILE%\Favorites" /s /q
+rd "%USERPROFILE%\Links" /s /q
 
 :: =================================== Windows Policies ===================================
 
